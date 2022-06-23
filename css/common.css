@@ -1439,6 +1439,23 @@ label.form-error {
       margin-right: 0; }
   .header-buttons-item_menu {
     display: none; }
+  .header-buttons-item_search {
+    margin-right: 0; }
+  @media screen and (max-width: 1340px) {
+    .header-logo {
+      margin-right: 30px; }
+    .header-buttons-item {
+      margin-right: 18px; }
+    .header-buttons-item_search {
+      margin-right: 0; }
+    .header-buttons-name {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media screen and (max-width: 1100px) {
+    .header-logo {
+      min-width: 80px;
+      width: 80px;
+      margin-right: 20px; } }
   @media screen and (max-width: 992px) {
     .header-logo {
       margin-right: 20px;
@@ -1523,7 +1540,7 @@ label.form-error {
 .search-input {
   visibility: hidden;
   position: absolute;
-  right: 64px;
+  right: 44px;
   top: 12px;
   height: 49px;
   width: 20px;
@@ -1543,7 +1560,7 @@ label.form-error {
 
 .search_active .search-input {
   visibility: visible;
-  width: 353px; }
+  width: 357px; }
 
 .search_active .search-button {
   display: block; }
@@ -1590,6 +1607,43 @@ label.form-error {
       background-color: #2873B9; }
   .main-menu-item:hover .main-menu-link:after {
     display: block; }
+  @media screen and (max-width: 1340px) {
+    .main-menu {
+      margin-right: 20px; }
+      .main-menu-item {
+        margin-right: 17px; }
+      .main-menu-link {
+        font-size: 13px; } }
+  .main-menu-services {
+    display: flex;
+    flex-wrap: wrap; }
+  .main-menu-services-item {
+    width: 156px;
+    margin-right: 24px;
+    margin-bottom: 20px; }
+    .main-menu-services-item:nth-child(6n) {
+      margin-right: 0; }
+    .main-menu-services-item:last-child {
+      margin-right: 0; }
+  .main-menu-services-link {
+    display: block;
+    text-decoration: none; }
+  .main-menu-list-link_mob {
+    display: none; }
+  .main-menu-services-img {
+    display: block;
+    width: 100%;
+    height: 156px;
+    object-fit: cover;
+    margin-bottom: 10px; }
+  .main-menu-services-label {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 19px;
+    color: #202430; }
+  .main-menu-services-link:hover .main-menu-services-label {
+    color: #D40A0A; }
   @media screen and (max-width: 992px) {
     .main-menu {
       display: none; } }
@@ -2020,7 +2074,7 @@ label.form-error {
   margin-bottom: 20px; }
 
 .mob-services-item {
-  width: 16.6%;
+  width: 112px;
   padding-left: 7px;
   padding-right: 7px; }
 
@@ -2045,6 +2099,9 @@ label.form-error {
   line-height: 14px;
   color: #202430; }
 
+.mob-services-link:hover .mob-services-label {
+  color: #D40A0A; }
+
 @media screen and (max-width: 720px) {
   .mob-block {
     top: 0;
@@ -2068,6 +2125,83 @@ label.form-error {
 
 body.mob-menu-show {
   overflow: hidden; }
+
+.main-submenu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: calc(100% - 220px);
+  min-height: 293px;
+  margin-left: 110px; }
+  .main-submenu-block {
+    margin-top: 52px;
+    padding: 30px 30px;
+    background-color: #fff;
+    box-shadow: 0px 26px 20px rgba(0, 0, 0, 0.05); }
+  .main-submenu-list {
+    width: 39%;
+    position: relative; }
+  .main-submenu-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 19px;
+    color: #818A9E;
+    letter-spacing: normal; }
+  .main-submenu-item:hover .main-submenu-link {
+    color: #202430; }
+  .main-submenu-item:hover .main-submenu-link:hover {
+    color: #D40A0A; }
+  .main-submenu-icon {
+    margin-left: auto;
+    min-width: 16px;
+    width: 16px;
+    height: 9px;
+    padding-left: 10px; }
+  .main-submenu-item:hover .main-submenu-icon path {
+    fill: #202430; }
+  .main-submenu-item:hover .main-submenu-link:hover .main-submenu-icon path {
+    fill: #D40A0A; }
+  .main-submenu_simple {
+    width: auto;
+    margin-right: 110px; }
+  .main-submenu_simple .main-submenu-block {
+    padding-bottom: 15px; }
+
+.main-menu-item:hover .main-submenu {
+  display: block; }
+
+.menu-list {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  min-height: 293px;
+  height: 100%;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  flex-wrap: wrap;
+  flex-direction: column; }
+
+.menu-item {
+  width: 56%; }
+
+.menu-link {
+  display: block;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #818A9E;
+  text-decoration: none; }
+  .menu-link:hover {
+    color: #D50A0A; }
+
+.main-submenu-item:hover .menu-list {
+  display: flex; }
 
 .socials-list {
   display: flex; }
