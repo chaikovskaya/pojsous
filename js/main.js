@@ -238,6 +238,19 @@ function initAjaxMore() {
     });
 }
 
+function initDropdownSearch() {
+    if (typeof(Dropdown) === 'undefined' || !jQuery.isFunction(Dropdown)) {
+        return false;
+    }
+
+    var common = {};
+
+    $('.JS-DropSearch').not('.JS-Dropdown-ready').each(function(){
+        var local = GLOBAL.parseData(jQuery(this).data('dropdown'));
+        new Dropdown(this, jQuery.extend({}, common, local));
+    });
+}
+
 function initResizeWindow() {
     var width = $(window).outerWidth();
     if (width <= GLOBAL.mobile) {
@@ -266,4 +279,5 @@ $(document).ready(function () {
     initMobileMenu();
     initForm();
     initAjaxMore();
+    initDropdownSearch();
 });

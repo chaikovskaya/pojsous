@@ -3,7 +3,7 @@ $mobile: 720px;
 $tablet: 992px;
 $notebook: 1100px;
 $desktop: 1340px;
-$gutters: 30px;
+$gutters: 40px;
 $gutter: $gutters/2;
 
 $color: #818A9E;
@@ -126,7 +126,7 @@ button {
     cursor: pointer;
     border: 0;
     outline: none;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Manrope', sans-serif;
 }
 
 input,
@@ -137,7 +137,7 @@ textarea {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Manrope', sans-serif;
 }
 
 ::-webkit-input-placeholder {color: #9b9b9b;font-size:13px;}
@@ -870,5 +870,9 @@ and (max-width: $mobile){
 	.h4 {
 		font-size:  14px;
 		line-height: 19px;
+	}
+	.container {
+		padding-right: 20px;
+		padding-left: 20px;
 	}
 }
