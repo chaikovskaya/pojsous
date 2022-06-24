@@ -1066,6 +1066,23 @@ body.mob-menu-show {
         display: block;
         line-height: 0;
     }
+    &-icon {}
+    &-icon_youtube {}
+    &-icon_tg {}
+    &-icon_whatsapp {}
+    &-list_light {}
+    &-list_light &-icon path {
+        fill: #fff;
+    }
+    &-list_light &-link:hover &-icon_youtube path {
+        fill: #E31E24;
+    }
+    &-list_light &-link:hover &-icon_tg path {
+        fill: #2873B9;
+    }
+    &-list_light &-link:hover &-icon_whatsapp path {
+        fill: #47B157;
+    }
 }
 
 /* IE 11 */

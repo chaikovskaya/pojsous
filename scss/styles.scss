@@ -273,10 +273,9 @@ blockquote {
 }
 
 .main-content {
-	padding-bottom: 90px;
+	padding-bottom: 112px;
 }
 .main-page .main-content {
-	padding-bottom: 120px;
 }
 
 .container {
@@ -403,6 +402,9 @@ blockquote {
 }
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
 	transform: none;
+}
+.swiper-button-lock {
+	display: none!important;
 }
 /* /swiper */
 
