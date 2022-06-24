@@ -229,7 +229,10 @@ label.form-error {
         background-color: #ECEDF0;
         color: #202430;
         &:hover {
-            background-color: #D50A0A;
+            background-color: #2873B9;
+        }
+        &:active {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #2873B9;
         }
     }
 }
@@ -470,11 +473,6 @@ and (min-width: $desktop){
 
 @media screen
 and (max-width: $tablet){
-    .button {
-        height: 45px;
-        font-size: 12px;
-        line-height: 16px;
-    }
 }
 
 @media screen

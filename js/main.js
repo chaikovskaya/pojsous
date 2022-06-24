@@ -154,7 +154,11 @@ function initSliderMainBanner() {
                 dynamicBullets: true,
                 clickable: true,
             },
-            navigation: false,
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
             spaceBetween: 0,
             slidesPerView: 1,
             breakpoints: {
@@ -250,6 +254,7 @@ function initDropdownSearch() {
         new Dropdown(this, jQuery.extend({}, common, local));
     });
 }
+
 
 function initResizeWindow() {
     var width = $(window).outerWidth();

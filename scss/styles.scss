@@ -383,13 +383,13 @@ blockquote {
 }
 .swiper-pagination-bullet {
 	left: 0!important;
-	width: 8px;
-	height: 8px;
+	width: 7px;
+	height: 7px;
 	background-color: #fff;
 	opacity: 0.3;
 	transition: height 0.3s linear;
-	margin-right: 6px!important;
-	margin-left: 6px!important;
+	margin-right: 3px!important;
+	margin-left: 3px!important;
 }
 .swiper-pagination-bullet-active {
 	background-color: #fff;
@@ -409,45 +409,38 @@ blockquote {
 /* slider */
 .slider {
 	&-nav {
-		display: flex;
-		align-items: center;
-		position: relative;
-		margin-right: 9px;
 	}
 	&-button {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: transparent;
-		width: 28px;
-		height: 28px;
-		margin-right: 12px;
+		width: 33px;
+		height: 33px;
 		border-radius: 50%;
 		cursor: pointer;
-		background: url("../images/icons/button-left.png") no-repeat center center;
-		border: 1px solid #fff;
-		&:last-child {
-			margin-right: 0;
-		}
-		&:hover {
-			border-color: transparent;
-			background-image: url("../images/icons/button-left-active.png");
-		}
+		background-color: rgba(255, 255, 255, 1);
 	}
-	&-button_prev {}
+	&-button-icon path {
+		fill: #D40A0A;
+	}
+	&-button_prev {
+	}
 	&-button_next {
-		transform: scaleX(-1);
 	}
 	&-button_disabled {
 		cursor: auto;
-		opacity: 0.4;
+		background-color: rgba(255, 255, 255, 0.2);
 	}
-	&-button_disabled:active {
-		border-color: #dcdcdc;
+	&-button_disabled &-button-icon path {
+		fill: #C5C6C7;
 	}
-	&-panel {
-		display: flex;
-		align-items: center;
+	&-button:hover &-button-icon path {
+		fill: #fff;
+	}
+	&-button:active {
+	}
+	&-button:active  &-button-icon path {
+		fill: #fff;
 	}
 }
 /* /slider */
