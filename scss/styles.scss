@@ -71,7 +71,7 @@ a img {
 }
 
 p {
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 
 ul {
@@ -899,7 +899,10 @@ and (max-width: $tablet){
 	.main-page .main-content {
 		background-position: center 490px;
 	}
-
+	.content {
+		font-size: 14px;
+		line-height: 19px;
+	}
 }
 
 @media screen

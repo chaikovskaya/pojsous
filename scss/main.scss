@@ -440,10 +440,7 @@
             text-align: center;
         }
         &-more {
-            height: 46px;
             min-width: 170px;
-            font-size: 12px;
-            line-height: 16px;
         }
         &_more &-more {
             min-width: auto;
@@ -459,11 +456,6 @@
             path {
                 fill: #fff;
             }
-        }
-        &-more-button {
-            height: 46px;
-            font-size: 12px;
-            line-height: 16px;
         }
     }
 }
@@ -568,10 +560,7 @@
         text-align: center;
     }
     &-more {
-        height: 46px;
         min-width: 170px;
-        font-size: 12px;
-        line-height: 16px;
     }
     &-link_more &-more {
         min-width: auto;
@@ -647,10 +636,7 @@
             text-align: center;
         }
         &-more {
-            height: 46px;
             min-width: 170px;
-            font-size: 12px;
-            line-height: 16px;
             background-color: #2873B9;
             &:hover {
                 background-color: #2873B9;
@@ -677,16 +663,62 @@
         &-slider-nav {
             display: flex;
         }
-        &-more-button {
-            height: 46px;
-            font-size: 12px;
-            line-height: 16px;
-        }
     }
     @media screen
     and (max-width: $mobile){
         &-link {
             width: 206px;
+        }
+    }
+}
+
+.about {
+    margin-bottom: 125px;
+    &-container {
+        display: flex;
+    }
+    &-img {
+        width: 52%;
+        padding-right: 30px;
+    }
+    &-pic {
+
+    }
+    &-detail {
+        width: 48%;
+    }
+    &-name {
+        margin-bottom: 22px;
+        font-size: 18px;
+        line-height: 20px;
+        color: #202430;
+    }
+    &-detail-content {
+        margin-bottom: 22px;
+    }
+    &-button {}
+
+    @media screen
+    and (max-width: $tablet){
+        &-container {
+            display: flex;
+        }
+        &-img {
+            padding-right: 15px;
+        }
+        &-pic {
+            object-fit: cover;
+            height: 100%;
+        }
+        &-button {
+            background-color: #D40A0A;
+            color: #fff;
+        }
+        &-name {
+            padding-left: 15px;
+            font-size: 14px;
+            line-height: 19px;
+            border-left: 3px solid #2873B9;
         }
     }
 }

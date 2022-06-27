@@ -245,6 +245,17 @@ label.form-error {
             border-color: #D50A0A;
         }
     }
+
+    &_light {
+        background-color: #ECEDF0;
+        color: #202430;
+        &:hover {
+            background-color: #D50A0A;
+        }
+        &:active {
+            background-color: #D50A0A;
+        }
+    }
 }
 
 /*selectric*/
@@ -483,6 +494,11 @@ and (min-width: $desktop){
 
 @media screen
 and (max-width: $tablet){
+    .button {
+        height: 46px;
+        font-size: 12px;
+        line-height: 16px;
+    }
 }
 
 @media screen
