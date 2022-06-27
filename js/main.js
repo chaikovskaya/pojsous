@@ -171,7 +171,56 @@ function initSliderMainBanner() {
                 992: {
                     simulateTouch: false,
                 },
-                1370: {
+                1340: {
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+
+var sliderProducts;
+function initSliderProducts() {
+    jQuery('.js-slider-products').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderProducts = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                    slidesPerView: 1,
+                    spaceBetween: 25,
+                },
+                720: {
+                    simulateTouch: false,
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                },
+                992: {
+                    simulateTouch: false,
+                    slidesPerView: 4,
+                    spaceBetween: 30,
                 },
             },
             on: {
@@ -281,6 +330,7 @@ $(document).ready(function () {
     initPopup();
     initSelect();
     initSliderMainBanner();
+    initSliderProducts();
     initMobileMenu();
     initForm();
     initAjaxMore();

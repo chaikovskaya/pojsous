@@ -2,6 +2,7 @@
 .footer {
     background-color: #092433;
     &-main {
+        background: url("../images/footer/footer-bgr.png") no-repeat calc(50% - 2px) calc(100% + 52px);
         color: #fff;
         a {
             color: #fff;
@@ -19,13 +20,27 @@
         width: 30%;
     }
     &-main-item_company {
+        width: 33.7%;
     }
-    &-main-item_menu {}
-    &-main-item_phone {}
-    &-main-item_contacts {}
+    &-main-item_menu {
+        width: 21%;
+    }
+    &-main-item_address {
+        width: 30%;
+    }
+    &-main-item_contacts {
+        width: 15%;
+    }
+    &-main-block {
+        max-width: 255px;
+    }
+    &-main-item_contacts &-main-block {
+        min-width: 150px;
+    }
     &-logo {
         display: block;
         margin-bottom: 50px;
+        line-height: 0;
     }
     &-logo-element {
         width: 127px;
@@ -43,11 +58,18 @@
         text-transform: uppercase;
         text-decoration: none;
     }
-    &-contacts {
+    &-address {
         margin-bottom: 35px;
         color: #fff;
     }
     &-socials {
+        .socials-icon {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &-socials_mob {
+        display: none;
     }
     &-socials-name {
         margin-bottom: 17px;
@@ -98,6 +120,9 @@
         font-size: 16px;
         line-height: 22px;
     }
+    &-company_mob {
+        display: none;
+    }
     &-copyright {
         margin-bottom: 12px;
     }
@@ -109,9 +134,39 @@
             }
         }
     }
+    &-contacts {
+        margin-bottom: 48px;
+    }
+    &-contacts-item {
+        margin-bottom: 12px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &-contacts-block {
+        display: flex;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 22px;
+        a {
+            text-decoration: none;
+        }
+    }
+    &-contacts-icon {
+        width: 16px;
+        margin-right: 7px;
+    }
+    &-contacts-icon_mail {
+        margin-top: 4px;
+    }
+    &-main-button {}
 
     @media screen
     and (max-width: $desktop){
+        &-main {
+            background-size: 100% auto;
+            background-position: calc(50% - 2px) bottom;
+        }
     }
 
     @media screen
@@ -120,9 +175,188 @@
 
     @media screen
     and (max-width: $tablet){
+        &-main-item_address {
+            display: none;
+        }
+        &-main-item_contacts {
+            width: 25%;
+        }
+        &-main-item_menu {
+            width: 40%;
+        }
+        &-main-container {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        &-menu {
+            column-count: 2;
+            column-gap: 30px;
+        }
+        &-info {
+            max-width: 330px;
+            font-size: 8px;
+            line-height: 11px;
+            font-weight: 300;
+        }
+        &-logo {
+            margin-bottom: 18px;
+        }
+        &-logo-element {
+            width: 116px;
+        }
+        &-company {
+            font-size: 12px;
+            line-height: 16px;
+        }
+        &-copyright {
+            margin-bottom: 10px;
+        }
+        &-menu {
+            margin-bottom: 22px;
+        }
+        &-menu-item {
+            line-height: 16px;
+        }
+        &-menu-link {
+            font-size: 12px;
+            line-height: 16px;
+            text-transform: none;
+        }
+        &-menu-item {
+            margin-bottom: 10px;
+        }
+        &-contacts-item {
+            margin-bottom: 7px;
+        }
+        &-contacts-block {
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &-contacts {
+            margin-bottom: 27px;
+        }
+        &-main-button {
+            height: 37px;
+            min-width: 166px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            font-size: 10px;
+            line-height: 13px;
+        }
+        &-develop {
+            font-size: 8px;
+            line-height: 11px;
+        }
+        &-develop-logo {
+            width: 75px;
+            height: 18px;
+        }
+        &-develop-link {
+            margin-top: -2px;
+        }
+        &-socials .socials-icon {
+            width: 37px;
+            height: 37px;
+        }
+        &-socials_mob {
+            display: block;
+        }
     }
 
     @media screen
     and (max-width: $mobile){
+        &-logo {
+            margin-bottom: 10px;
+        }
+        &-logo-element {
+            width: 75px;
+            height: 44px;
+        }
+        &-main-button {
+            display: none;
+        }
+        &-contacts-block {
+            justify-content: flex-end;
+        }
+        &-contacts-item:first-child ~ &-contacts-item {
+            display: none;
+        }
+        &-main-container {
+            flex-wrap: wrap;
+            flex-direction: column;
+            height: 270px;
+            padding-bottom: 10px;
+        }
+        &-menu {
+            column-count: auto;
+            margin-bottom: 10px;
+            min-height: 150px;
+        }
+        &-menu-item {
+            margin-bottom: 6px;
+        }
+        &-main-item_menu {
+            order: 1;
+            width: 30%;
+        }
+        &-main-item_contacts {
+            order: 2;
+            width: 70%;
+        }
+        &-main-item_contacts &-main-block {
+            margin-left: auto;
+        }
+        &-main-item_address &-main-block {
+            margin-left: auto;
+        }
+        &-main-item_company {
+            width: 30%;
+        }
+        &-main-item_company &-company {
+            display: none;
+        }
+        &-main-item_address {
+            display: block;
+            order: 3;
+            width: 70%;
+        }
+        &-address {
+            display: none;
+        }
+        &-socials-name {
+            display: none;
+        }
+        &-socials_mob {
+            display: none;
+        }
+        &-company_mob {
+            display: block;
+        }
+        &-socials {
+            width: 150px;
+            margin-left: auto;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+        .socials-list {
+            justify-content: flex-end;
+        }
+        &-company {
+            text-align: right;
+        }
+        &-bottom-container {
+            flex-direction: column;
+            padding-top: 12px;
+            padding-bottom: 16px;
+        }
+        &-info {
+            text-align: center;
+            margin-bottom: 11px;
+        }
+        &-develop {
+            margin-left: 0;
+            text-align: center;
+        }
     }
 }

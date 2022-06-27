@@ -235,6 +235,16 @@ label.form-error {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #2873B9;
         }
     }
+
+    &_modified {
+        padding-top: 14px;
+        background-color: transparent;
+        border: 1px solid #FFFFFF;
+        &:hover {
+            background-color: #D50A0A;
+            border-color: #D50A0A;
+        }
+    }
 }
 
 /*selectric*/

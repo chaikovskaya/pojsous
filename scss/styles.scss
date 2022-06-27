@@ -31,8 +31,10 @@ body {
 
 h1,
 .h1 {
-    margin-bottom: 36px;
+    margin-bottom: 60px;
 	font: 500 36px/40px 'Manrope', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
 	color: #202430;
 }
 
@@ -46,7 +48,7 @@ h2,
 h3,
 .h3 {
     margin-bottom: 32px;
-    font: 700 18px/20px 'Manrope', sans-serif;
+    font: 18px/20px 'Manrope', sans-serif;
 	color: #202430;
 }
 
@@ -276,6 +278,7 @@ blockquote {
 	padding-bottom: 112px;
 }
 .main-page .main-content {
+	background: url("../images/bgr/main-bgr.png") repeat-y center 619px;
 }
 
 .container {
@@ -384,14 +387,13 @@ blockquote {
 	left: 0!important;
 	width: 7px;
 	height: 7px;
-	background-color: #fff;
-	opacity: 0.3;
+	background-color: #2873B9;
+	opacity: 0.5;
 	transition: height 0.3s linear;
-	margin-right: 3px!important;
-	margin-left: 3px!important;
+	margin-right: 5px!important;
+	margin-left: 5px!important;
 }
 .swiper-pagination-bullet-active {
-	background-color: #fff;
 	opacity: 1;
 }
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
@@ -411,6 +413,9 @@ blockquote {
 /* slider */
 .slider {
 	&-nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	&-button {
 		display: flex;
@@ -420,29 +425,47 @@ blockquote {
 		height: 33px;
 		border-radius: 50%;
 		cursor: pointer;
-		background-color: rgba(255, 255, 255, 1);
+		background-color: #2873B9;
+		&:hover {
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #2873B9;
+		}
 	}
 	&-button-icon path {
-		fill: #D40A0A;
+		fill: #fff;
 	}
 	&-button_prev {
+		margin-right: 5px;
 	}
 	&-button_next {
-	}
-	&-button_disabled {
-		cursor: auto;
-		background-color: rgba(255, 255, 255, 0.2);
-	}
-	&-button_disabled &-button-icon path {
-		fill: #C5C6C7;
+		margin-left: 5px;
 	}
 	&-button:hover &-button-icon path {
 		fill: #fff;
 	}
 	&-button:active {
+		background: #2873B9;
 	}
-	&-button:active  &-button-icon path {
+	&-button:active &-button-icon path {
 		fill: #fff;
+	}
+	&-button_disabled {
+		cursor: auto;
+		background-color: rgba(255, 255, 255, 0.2);
+		&:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+	}
+	&-button_disabled &-button-icon path {
+		fill: #C5C6C7;
+	}
+	&-button_disabled:hover &-button-icon path {
+		fill: #C5C6C7;
+	}
+	&-button_disabled:active {
+		background: rgba(255, 255, 255, 0.2);
+	}
+	&-button_disabled:active &-button-icon path {
+		fill: #C5C6C7;
 	}
 }
 /* /slider */
@@ -763,20 +786,24 @@ blockquote {
 /* /tabs */
 
 .link {
+	position: absolute;
+	top: 7px;
+	right: 0;
+	display: flex;
+	align-items: center;
 	font-family: 'Manrope', sans-serif;
-	font-weight: 800;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 24px;
-	letter-spacing: -0.02em;
-	text-transform: uppercase;
-	color: #526295;
+	color: #202430;
 	text-decoration: none;
 	white-space: nowrap;
 	&:hover {
-		color: #FF3560;
+		color: #D50A0A;
 	}
 	&-icon {
-		margin-left: 17px;
+		width: 23px;
+		height: 23px;
+		margin-left: 9px;
 	}
 	&:hover &-icon path {
 		fill: #FF3560;
@@ -842,30 +869,40 @@ and (max-width: $desktop){
 
 @media screen
 and (max-width: $tablet){
-}
-
-@media screen
-and (max-width: $mobile){
 	h1,
 	.h1 {
-		font-size:  22px;
-		line-height: 24px;
+		margin-bottom: 35px;
+		font-size:  26px;
+		line-height: 29px;
 	}
 	h2,
 	.h2 {
 		font-size:  18px;
 		line-height: 24px;
+		font-weight: 700;
 	}
 	h3,
 	.h3 {
 		font-size:  14px;
 		line-height: 19px;
+		font-weight: 500;
 	}
 	h4,
 	.h4 {
+		font-weight: 500;
 		font-size:  14px;
 		line-height: 19px;
 	}
+	.link {
+		display: none;
+	}
+	.main-page .main-content {
+		background-position: center 490px;
+	}
+}
+
+@media screen
+and (max-width: $mobile){
 	.container {
 		padding-right: 20px;
 		padding-left: 20px;

@@ -280,7 +280,16 @@
     }
 
     @media screen
+    and (max-width: $desktop){
+        &-input {
+            right: 33px;
+        }
+    }
+    @media screen
     and (max-width: $tablet){
+        &-input {
+            top: 0;
+        }
         &-icon {
             min-width: 29px;
             width: 29px;
@@ -963,6 +972,7 @@ body.mob-menu-show {
     position: absolute;
     top: 45px;
     left: 0;
+    z-index: 2;
     width: calc(100% - 220px);
     min-height: 293px;
     margin-left: 110px;
