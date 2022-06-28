@@ -286,6 +286,106 @@ function reInitSliderServices() {
     sliderServices = undefined;
 }
 
+var sliderProjects;
+function initSliderProjects() {
+    jQuery('.js-slider-projects').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderProjects = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                    spaceBetween: 25,
+                },
+                720: {
+                    simulateTouch: false,
+                    spaceBetween: 15,
+                },
+                992: {
+                    simulateTouch: false,
+                    spaceBetween: 30,
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+
+var sliderNews = undefined;
+function initSliderNews() {
+    jQuery('.js-slider-news').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderNews = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                    spaceBetween: 25,
+                },
+                720: {
+                    simulateTouch: false,
+                    spaceBetween: 15,
+                },
+                992: {
+                    simulateTouch: false,
+                    spaceBetween: 0,
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+function reInitSliderNews() {
+    if (sliderNews) {
+        sliderNews.destroy();
+    }
+    sliderNews = undefined;
+}
+
 function initMobileMenu() {
     if (typeof(MobileMenu) === 'undefined' || !jQuery.isFunction(MobileMenu)) {
         return false;
@@ -363,15 +463,24 @@ function initResizeWindow() {
         if (sliderServices == undefined) {
             initSliderServices();
         }
+        if (sliderNews == undefined) {
+            initSliderNews();
+        }
     } else if (width <= GLOBAL.tablet) {
         GLOBAL.widthWindow = 'isTablet';
         if (sliderServices == undefined) {
             initSliderServices();
         }
+        if (sliderNews != undefined) {
+            reInitSliderNews();
+        }
     } else {
         GLOBAL.widthWindow = '';
         if (sliderServices != undefined) {
             reInitSliderServices();
+        }
+        if (sliderNews != undefined) {
+            reInitSliderNews();
         }
     }
 }
@@ -392,6 +501,7 @@ $(document).ready(function () {
     initSliderMainBanner();
     initSliderProducts();
     initSliderServices();
+    initSliderProjects();
     initMobileMenu();
     initForm();
     initAjaxMore();
