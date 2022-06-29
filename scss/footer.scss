@@ -14,7 +14,7 @@
     &-main-container {
         display: flex;
         padding-top: 53px;
-        padding-bottom: 53px;
+        padding-bottom: 40px;
     }
     &-main-item {
         width: 30%;
@@ -50,6 +50,9 @@
     }
     &-menu-item {
         margin-bottom: 12px;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &-menu-link {
         font-weight: 300;

@@ -337,9 +337,14 @@
         margin-bottom: -84px;
         padding-bottom: 84px;
     }
+    &-pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 298px;
+    }
     &-img {
         display: block;
-        width: 100%;
     }
     &-info {
         display: block;
@@ -436,11 +441,9 @@
         }
         &-more {
             width: 100%;
-            background-color: #2873B9;
-            color: #fff;
         }
         &-icon-wrapper {
-            height: 210px;
+            height: 206px;
         }
         &-icon {
             width: 70px;
@@ -453,6 +456,9 @@
             path {
                 fill: #fff;
             }
+        }
+        &-pic {
+            height: 206px;
         }
     }
 }
@@ -1080,16 +1086,6 @@
             padding-left: 0;
             padding-right: 0;
         }
-        &-more {
-            background-color: #2873B9;
-            color: #fff;
-            &:hover {
-                background-color: #2873B9;
-            }
-            &:active {
-                background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #2873B9;
-            }
-        }
         &-icon-wrapper {
             height: 175px;
         }
@@ -1408,6 +1404,242 @@
         }
         &-slider-nav {
             display: flex;
+        }
+    }
+}
+
+.map {
+    margin-bottom: 120px;
+    max-width: 1107px;
+    margin-left: auto;
+    margin-right: auto;
+    &-block {
+        position: relative;
+    }
+    &-element {
+        position: relative;
+    }
+    &-info {
+        position: absolute;
+        top: 33%;
+        left: 51.4%;
+        z-index: 1;
+        width: 280px;
+        padding-left: 27px;
+        border-left: 3px solid #2873B9;
+        font-size: 16px;
+        line-height: 24px;
+        color: #818A9E;
+    }
+    &-point-icon {
+        width: 11px;
+        height: 11px;
+        background-color: #D50A0A;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.1s linear;
+    }
+    &-point-baloon {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        z-index: 1;
+        transform: translateX(-50%);
+        width: 205px;
+        padding-bottom: 8px;
+    }
+    &-point-baloon-content {
+        padding: 15px 20px;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 50px rgba(9, 36, 51, 0.15);
+        border-radius: 8px;
+        text-align: center;
+    }
+    &-city {
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #202430;
+    }
+    &-phone {
+        font-size: 14px;
+        line-height: 19px;
+        color: #818A9E;
+        a {
+            text-decoration: none;
+        }
+    }
+    &-point {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &-point-1 {
+        top: 63%;
+        left: 11%;
+    }
+    &-point-2 {
+        top: 59.4%;
+        left: 42%;
+    }
+    &-point-3 {
+        top: 80.3%;
+        left: 15.4%;
+    }
+    &-point-4 {
+        top: 83.5%;
+        left: 10.8%;
+    }
+    &-point-5 {
+        top: 80.2%;
+        left: 68%;
+    }
+    &-point-6 {
+        top: 62%;
+        left: 37%;
+    }
+    &-point-7 {
+        top: 80%;
+        left: 28%;
+    }
+    &-point-8 {
+        top: 69.5%;
+        left: 5.4%;
+    }
+    &-point-9 {
+        top: 46.3%;
+        left: 6.5%;
+    }
+    &-point-10 {
+        top: 75%;
+        left: 15.6%;
+    }
+    &-point-11 {
+        top: 63%;
+        left: 19%;
+    }
+    &-point-12 {
+        top: 62%;
+        left: 24%;
+    }
+    &-point-13 {
+        top: 69%;
+        left: 18%;
+    }
+    &-point-14 {
+        top: 62%;
+        left: 14%;
+    }
+    &-point:hover &-point-baloon {
+        display: block;
+    }
+    &-point:hover &-point-icon {
+        transform: scale(1.3);
+    }
+
+    @media screen
+    and (max-width: $tablet) {
+        &-info {
+            position: static;
+            width: 433px;
+            margin-bottom: 35px;
+            padding-left: 20px;
+            color: #202430;
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+    @media screen
+    and (max-width: $mobile) {
+        &-info {
+            width: auto;
+            margin-bottom: 30px;
+            padding-left: 18px;
+        }
+        &-point-icon {
+            width: 9px;
+            height: 9px;
+        }
+        &-point-baloon {
+            width: 180px;
+        }
+        &-city {
+            margin-bottom: 5px;
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &-phone {
+            font-size: 12px;
+            line-height: 18px;
+        }
+        &-point-9 &-point-baloon {
+            margin-left: 26px;
+        }
+    }
+}
+
+
+.clients {
+    margin-bottom: 107px;
+    &-list-wrapper {}
+    &-list {
+        margin-bottom: 45px;
+    }
+    &-list-item {
+        width: auto;
+    }
+    &-link {
+        width: 188px;
+        height: 188px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-img {}
+
+    @media screen
+    and (max-width: $tablet) {
+        margin-bottom: 120px;
+        &-list {
+            margin-bottom: 40px;
+        }
+        &-link {
+            width: 115px;
+            height: 115px;
+        }
+    }
+    @media screen
+    and (max-width: $mobile) {
+        &-link {
+            width: 113px;
+            height: 113px;
+        }
+    }
+}
+
+.information {
+    &-title {
+        margin-bottom: 50px;
+    }
+    &-content {
+        text-align: center;
+        max-width: 1062px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media screen
+    and (max-width: $tablet) {
+        &-title {
+            margin-bottom: 35px;
+        }
+    }
+    @media screen
+    and (max-width: $mobile) {
+        &-content {
+            text-align: left;
         }
     }
 }

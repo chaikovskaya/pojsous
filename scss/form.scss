@@ -256,6 +256,17 @@ label.form-error {
             background-color: #D50A0A;
         }
     }
+
+    &_more {
+        background-color: #ECEDF0;
+        color: #202430;
+        &:hover {
+            background-color: #2873B9;
+        }
+        &:active {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #2873B9;
+        }
+    }
 }
 
 /*selectric*/
@@ -498,6 +509,10 @@ and (max-width: $tablet){
         height: 46px;
         font-size: 12px;
         line-height: 16px;
+        &_more {
+            background-color: #2873B9;
+            color: #fff;
+        }
     }
 }
 

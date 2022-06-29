@@ -386,6 +386,53 @@ function reInitSliderNews() {
     sliderNews = undefined;
 }
 
+var sliderClients;
+function initSliderClients() {
+    jQuery('.js-slider-clients').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderClients = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                    spaceBetween: 25,
+                },
+                720: {
+                    simulateTouch: false,
+                    spaceBetween: 18,
+                },
+                992: {
+                    simulateTouch: false,
+                    spaceBetween: 30,
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+
 function initMobileMenu() {
     if (typeof(MobileMenu) === 'undefined' || !jQuery.isFunction(MobileMenu)) {
         return false;
@@ -502,6 +549,7 @@ $(document).ready(function () {
     initSliderProducts();
     initSliderServices();
     initSliderProjects();
+    initSliderClients();
     initMobileMenu();
     initForm();
     initAjaxMore();
