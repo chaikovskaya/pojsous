@@ -142,6 +142,10 @@ textarea {
     font-family: 'Manrope', sans-serif;
 }
 
+fieldset {
+	border: 0;
+}
+
 ::-webkit-input-placeholder {color: #9b9b9b;font-size:13px;}
 :-moz-placeholder { /* Firefox 18- */color: #9b9b9b;font-size:13px;}
 ::-moz-placeholder {  /* Firefox 19+ */color: #9b9b9b;font-size:13px;}

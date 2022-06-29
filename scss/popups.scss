@@ -1,7 +1,7 @@
 
 /* Fancybox */
 .fancybox-bg {
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .fancybox-slide {
@@ -27,29 +27,25 @@
 
 .fancybox-close {
     position: absolute;
-    top: -23px;
+    top: 0;
     left: 100%;
-    margin-left: 14px;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 19px;
-    height: 19px;
+    width: 33px;
+    height: 33px;
     cursor: pointer;
-    background-color: transparent;
-    border: 2px solid #fff;
+    border: 0;
     border-radius: 50%;
+    background-color: #fff;
 }
 .fancybox-close:hover {
 }
 
 .fancybox-close-icon {
-    path {
-        fill: #fff;
-    }
 }
 .fancybox-close:hover .fancybox-close-icon {
-    color: #fff;
 }
 
 .fancybox-nav-block {
@@ -106,6 +102,13 @@
         background-color: transparent;
     }
 }
+.fancybox-active .wrapper {
+    -webkit-filter: blur(25px);
+    -moz-filter: blur(25px);
+    -o-filter: blur(25px);
+    -ms-filter: blur(25px);
+    filter: blur(25px);
+}
 /* /Fancybox */
 
 
@@ -136,26 +139,65 @@
 }
 
 .popup {
-    width: 798px;
+    width: 735px;
     background-color: #fff;
-    padding: 44px 33px 52px;
-    border-radius: 5px;
+    padding: 65px 60px 60px;
+    border-radius: 12px;
     &-title {
         margin-bottom: 20px;
         font-family: 'Manrope', sans-serif;
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 39px;
-        color: #1B1B1B;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
+        color: #202430;
+        text-align: center;
     }
     &-info {
-        margin-bottom: 33px;
-        letter-spacing: -0.01em;
-        color: #4F4F4F;
-        font-size: 15px;
-        line-height: 25px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
     }
-    &_booking {}
+    &-container {
+        max-width: 298px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &-button {
+        width: 100%;
+    }
+
+    @media screen
+    and (max-width: $tablet) {
+        width: 500px;
+        padding: 34px 20px 42px;
+        &-title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        &-info {
+            margin-bottom: 40px;
+        }
+        &-button {
+            width: auto;
+        }
+    }
+    @media screen
+    and (max-width: $mobile) {
+        padding: 47px 28px;
+        &-container {
+            display: flex;
+            flex-direction: column;
+        }
+        &-info {
+            margin-bottom: 20px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
 }
 
 .decor-popup {
@@ -217,44 +259,9 @@
     }
 }
 
-.popup-city {
-    width: 297px;
-    padding: 29px 29px 47px;
-    &-title {
-        margin-bottom: 25px;
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 23px;
-        color: #1B1B1B;
-    }
-    &-list {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    &-list-item {
-        margin-right: 23px;
-    }
-}
-
-.map-popup {
-    max-width: 250px;
-}
-
 
 @media screen
 and (max-width: $tablet){
-    .popup {
-        padding: 34px 20px 42px;
-        &-title {
-            font-size: 26px;
-            line-height: 38px;
-        }
-        &-info {
-            margin-bottom: 25px;
-            font-size: 13px;
-            line-height: 21px;
-        }
-    }
     .location-popup {
         top: calc(100% + 24px);
         width: 270px;
@@ -271,24 +278,17 @@ and (max-width: $tablet){
     .fancybox-slide {
         padding: 20px;
     }
-    .fancybox-close {
-        top: 20px;
-        left: auto;
-        right: 15px;
-        margin-left: 0;
-        border-color: #526295;
-    }
-    .fancybox-close-icon {
-        path {
-            fill: #526295;
-        }
-    }
 }
 
 @media screen
 and (max-width: $mobile){
     .fancybox-slide {
         padding: 15px;
+    }
+    .fancybox-close {
+        top: -44px;
+        left: auto;
+        right: 0;
     }
     .map-popup {
         max-width: 190px;
