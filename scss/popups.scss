@@ -7,6 +7,9 @@
 .fancybox-slide {
     padding: 30px 40px;
 }
+.fancybox-slide_simple {
+    padding: 0;
+}
 
 .fancybox-slide--html {
     padding: 0;
@@ -46,6 +49,21 @@
 .fancybox-close-icon {
 }
 .fancybox-close:hover .fancybox-close-icon {
+}
+.fancybox-slide_simple .fancybox-close {
+    top: 34px;
+    left: auto;
+    right: 30px;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+}
+.fancybox-slide_simple .fancybox-close-icon {
+    width: 18px;
+    height: 18px;
+    path {
+       fill: #2873B9;
+    }
 }
 
 .fancybox-nav-block {
@@ -170,11 +188,26 @@
     &-button {
         width: 100%;
     }
+    &_city {
+        display: none;
+    }
+    &_success {
+        width: 418px;
+    }
+    &-success-actions {
+        text-align: center;
+        margin-top: 29px;
+    }
+    &-success-button {}
 
     @media screen
     and (max-width: $tablet) {
         width: 500px;
         padding: 34px 20px 42px;
+        &_success {
+            width: 418px;
+            padding: 60px;
+        }
         &-info {
             margin-bottom: 40px;
         }
@@ -183,10 +216,20 @@
             font-size: 14px;
             line-height: 19px;
         }
+        &-success-button {
+            width: 100%;
+        }
+        &-success-actions {
+            margin-top: 20px;
+        }
     }
     @media screen
     and (max-width: $mobile) {
         padding: 47px 28px;
+        &_success {
+            width: 280px;
+            padding: 47px 18px;
+        }
         &-container {
             display: flex;
             flex-direction: column;
@@ -206,6 +249,9 @@
             height: 46px;
             font-size: 12px;
             line-height: 16px;
+        }
+        &-success-button {
+            width: auto;
         }
     }
 }
@@ -285,15 +331,15 @@ and (max-width: $tablet){
             width: 103px;
         }
     }
-    .fancybox-slide {
-        padding: 20px;
-    }
 }
 
 @media screen
 and (max-width: $mobile){
     .fancybox-slide {
         padding: 15px;
+    }
+    .fancybox-slide_simple {
+        padding: 0;
     }
     .fancybox-close {
         top: -44px;
@@ -302,5 +348,196 @@ and (max-width: $mobile){
     }
     .map-popup {
         max-width: 190px;
+    }
+}
+
+
+.city {
+    &-title {
+        display: block;
+        text-align: center;
+    }
+    &-main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &-main-item {
+        margin-right: 8px;
+        margin-bottom: 20px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &-button {
+        height: 35px;
+        padding: 8px 17px;
+        &:active {
+            background-color: #D50A0A;
+        }
+    }
+    &-button_active {
+        background-color: #2873B9;
+        color: #fff;
+    }
+    &-field {
+        position: relative;
+        margin-bottom: 17px;
+    }
+    &-input {
+        position: relative;
+        z-index: 2;
+    }
+    .search_dynamic &-input {
+        border-color: transparent;
+    }
+    @media screen
+    and (max-width: $tablet){
+        &-main-item {
+            margin-right: 15px;
+        }
+        &-button {
+            height: 32px;
+            background-color: #2873B9;
+            color: #fff;
+        }
+    }
+    @media screen
+    and (max-width: $tablet){
+        &-main {
+            margin-bottom: 5px;
+        }
+        &-main-item {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+
+.list-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding-top: 49px;
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(9, 36, 51, 0.15);
+    border-radius: 8px 8px;
+    &-block {
+        max-height: 223px;
+    }
+    &-item {
+        &:last-child {
+            padding-bottom: 7px;
+        }
+    }
+    &-item_hide {
+        display: none;
+    }
+    &-item_show {
+    }
+    &-link {
+        display: block;
+        padding: 15px 33px 15px 30px;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 19px;
+        color: #202430;
+        &:hover {
+            background-color: #FAFAFA;
+            color: #D50A0A;
+        }
+    }
+}
+
+
+.city-mob {
+    display: none;
+    width: 100%;
+    height: 100%;
+    &-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    &-panel {
+        margin-bottom: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #ECEDF0;
+    }
+    &-title {
+        margin-right: auto;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        text-transform: uppercase;
+    }
+    &-list {
+        background-color: #fff;
+    }
+    &-list-item {
+        border: solid #ECEDF0;
+        border-width: 1px 0 0;
+        &:last-child {
+            border-bottom-width: 1px;
+        }
+    }
+    &-list-item_active {}
+    &-list-item_hide {
+        display: none;
+    }
+    &-list-item_show {}
+    &-list-link {
+        display: flex;
+        align-items: center;
+        padding: 20px 30px;
+        font-size: 14px;
+        line-height: 19px;
+        color: #202430;
+        text-decoration: none;
+        &:hover {
+            color: #202430;
+        }
+    }
+    &-list-item_active &-list-link {
+        font-weight: 700;
+    }
+    &-field {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    &-input {
+        margin-right: 20px;
+        background-color: #ECEDF0;
+    }
+    &-reset {
+        font-size: 12px;
+        line-height: 16px;
+        color: #2873B9;
+        text-decoration: none;
+        &:hover {
+            color: #2873B9;
+        }
+    }
+    &-icon {
+        display: none;
+        margin-right: 15px;
+    }
+    &-list-item_show &-icon {
+        display: block;
+    }
+
+    @media screen
+    and (max-width: $tablet) {
+        &-container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &-list-link {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 }

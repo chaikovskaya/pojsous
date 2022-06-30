@@ -7,10 +7,12 @@ $colorPlaceholder: #818A9E;
     &-label {
     }
     &-actions {
-        margin-top: 30px;
+        margin-top: 21px;
+        text-align: center;
     }
     &-info {
         order: 1;
+        margin-top: 9px;
         font-weight: 300;
         font-size: 11px;
         line-height: 15px;
@@ -52,7 +54,7 @@ $colorPlaceholder: #818A9E;
         }
         &-info {
             order: initial;
-            margin-top: 16px;
+            margin-top: 7px;
             font-size: 9px;
             line-height: 12px;
         }
@@ -135,6 +137,28 @@ $colorPlaceholder: #818A9E;
             -webkit-text-fill-color: #fff;
         }
     }
+
+    &_simple {
+        height: 46px;
+        background-color: #ECEDF0;
+        border-color: transparent;
+    }
+    &_simple::placeholder {
+        color: #818A9E;
+    }
+
+    @media screen
+    and (max-width: $tablet){
+        &_simple {
+            font-size: 12px;
+            line-height: 16px;
+        }
+        &_simple::placeholder {
+            font-size: 12px;
+            line-height: 16px;
+            color: #818A9E;
+        }
+    }
 }
 .input:not(:placeholder-shown) ~ .field-icon {
     display: none;
@@ -142,10 +166,16 @@ $colorPlaceholder: #818A9E;
 
 input.form-error {
     display: block;
-    border-color: #FF3560;
+    border-color: #FCDCDC;
+    background-color: #FCDCDC;
+    color: #E31E24;
     &:focus {
-        border-color: #FF3560;
+        border-color: #FCDCDC;
     }
+    &::placeholder {
+        color: #E31E24;
+    }
+
 }
 label.form-error {
     display: block;
@@ -528,7 +558,6 @@ label.form-error {
     &-back {
         margin-top: 13px;
         text-align: center;
-        margin-bottom: 12px;
     }
     &-link {
         font-size: 11px;
@@ -539,7 +568,7 @@ label.form-error {
         }
     }
     &-actions {
-        margin-top: 20px;
+        margin-top: 11px;
     }
     @media screen
     and (max-width: $mobile){

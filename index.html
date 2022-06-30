@@ -104,7 +104,11 @@
                     <ul class="header-list">
                         <li class="header-list-item">
                             <div class="location">
-                                <a class="location-link" href="javascript:;">Пенза<svg class="location-link-icon" width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a class="location-link js-popup-city" href="#city-popup">Пенза<svg class="location-link-icon" width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.920552 0.477192C1.02604 0.37174 1.16908 0.3125 1.31824 0.3125C1.46739 0.3125 1.61044 0.37174 1.71593 0.477192L4.5003 3.26157L7.28467 0.477192C7.39076 0.374729 7.53285 0.318031 7.68034 0.319313C7.82782 0.320595 7.96891 0.379752 8.0732 0.484044C8.17749 0.588336 8.23665 0.729418 8.23793 0.876904C8.23921 1.02439 8.18251 1.16648 8.08005 1.27257L4.89799 4.45463C4.7925 4.56008 4.64946 4.61932 4.5003 4.61932C4.35115 4.61932 4.2081 4.56008 4.10261 4.45463L0.920552 1.27257C0.815099 1.16708 0.755859 1.02403 0.755859 0.87488C0.755859 0.725725 0.815099 0.582677 0.920552 0.477192Z" fill="white"/>
+                                    </svg>
+                                </a>
+                                <a class="location-link location-link_mob js-popup-city-mob" href="#city-popup-mob">Пенза<svg class="location-link-icon" width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.920552 0.477192C1.02604 0.37174 1.16908 0.3125 1.31824 0.3125C1.46739 0.3125 1.61044 0.37174 1.71593 0.477192L4.5003 3.26157L7.28467 0.477192C7.39076 0.374729 7.53285 0.318031 7.68034 0.319313C7.82782 0.320595 7.96891 0.379752 8.0732 0.484044C8.17749 0.588336 8.23665 0.729418 8.23793 0.876904C8.23921 1.02439 8.18251 1.16648 8.08005 1.27257L4.89799 4.45463C4.7925 4.56008 4.64946 4.61932 4.5003 4.61932C4.35115 4.61932 4.2081 4.56008 4.10261 4.45463L0.920552 1.27257C0.815099 1.16708 0.755859 1.02403 0.755859 0.87488C0.755859 0.725725 0.815099 0.582677 0.920552 0.477192Z" fill="white"/>
                                     </svg>
                                 </a>
@@ -502,8 +506,9 @@
                                 <div class="mob-block JS-MobileMenu-Dropdown">
                                     <div class="mob-close-panel">
                                         <form class="mob-search-form">
-                                            <div class="mob-search-container">
-                                                <input class="mob-search-input" type="text" placeholder="Поиск..." />
+                                            <div class="mob-search-container js-search" data-search-dynamic="search_dynamic">
+                                                <input class="mob-search-input js-search-input" type="text" placeholder="Поиск..." />
+                                                <a class="mob-search-reset js-search-reset" href="javascript:;">Отмена</a>
                                             </div>
                                         </form>
                                         <a class="mob-menu-switcher JS-MobileMenu-Close" href="javascript:;">
@@ -512,6 +517,11 @@
                                                 <rect width="22.992" height="2.46343" rx="1.23171" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 18 16.2578)" fill="#2873B9"/>
                                             </svg>
                                         </a>
+                                    </div>
+                                    <div class="mob-search-result">
+                                        модули пожаротушения МГП-1
+                                        модули пожаротушения МГП-2
+                                        модули пожаротушения МГП-3
                                     </div>
                                     <div class="mob-nav">
                                         <ul class="mob-list">
@@ -770,12 +780,12 @@
                                             </ul>
                                         </div>
                                         <div class="mob-buttons">
-                                            <a class="mob-button button" href="javascript:;">Расчет цены</a>
+                                            <a class="mob-button button js-popup-calculate" href="javascript:;" data-src="./ajax/calculate.html">Расчет цены</a>
                                             <a class="mob-button-simple js-popup-callback" href="javascript:;" data-src="./ajax/callback.html">Заказать звонок</a>
                                         </div>
                                     </div>
                                     <div class="mob-location">
-                                        <a class="mob-location-link" href="javascript:;">
+                                        <a class="mob-location-link js-popup-city-mob" href="#city-popup-mob">
                                             <svg class="mob-location-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
                                             </svg><span class="mob-location-label">Пенза</span>
@@ -1745,6 +1755,161 @@
         <a class="button-up js-scrolltop" href="javascript:;" data-scrolltop="button-up_active">
             <i class="button-up-icon icon icon_arrow-bottom-light"></i>
         </a>
+
+        <div id="city-popup" class="popup popup_city">
+            <span class="city-title h2">Выберите свой город</span>
+            <form>
+                <div class="city-field js-search" data-search-dynamic="search_dynamic">
+                    <input class="city-input input js-search-input js-find-input" type="text" placeholder="Введите Ваш город" name="city" />
+                    <a class="search-reset js-search-reset" href="javascript:;">
+                        <svg class="search-reset-icon" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.54679 0.453214C8.29648 0.202911 7.89066 0.202911 7.64036 0.453214L4.5 3.59357L1.35964 0.453214C1.10934 0.202911 0.703518 0.202911 0.453214 0.453214V0.453214C0.202911 0.703518 0.202911 1.10934 0.453214 1.35964L3.59357 4.5L0.453214 7.64036C0.202911 7.89066 0.202911 8.29648 0.453214 8.54679V8.54679C0.703518 8.79709 1.10934 8.79709 1.35964 8.54679L4.5 5.40643L7.64036 8.54679C7.89066 8.79709 8.29648 8.79709 8.54679 8.54679V8.54679C8.79709 8.29648 8.79709 7.89066 8.54679 7.64036L5.40643 4.5L8.54679 1.35964C8.79709 1.10934 8.79709 0.703518 8.54679 0.453214V0.453214Z" fill="#202430"/>
+                        </svg>
+                    </a>
+                    <!-- Показывается list-popup, если есть результаты поиска -->
+                    <!--
+                    <div class="list-popup">
+                        <div class="list-popup-block js-custom-scroll">
+                            <ul class="list-popup-menu">
+                                <li class="list-popup-item">
+                                    <a class="list-popup-link" href="#">Валуйки. Белгородская область</a>
+                                </li>
+                                <li class="list-popup-item">
+                                    <a class="list-popup-link" href="#">Иваново. Ивановская область</a>
+                                </li>
+                                <li class="list-popup-item">
+                                    <a class="list-popup-link" href="#">Ивантеевка. Московская область</a>
+                                </li>
+                                <li class="list-popup-item">
+                                    <a class="list-popup-link" href="#">Новая Усмань. Воронежская область</a>
+                                </li>
+                                <li class="list-popup-item">
+                                    <a class="list-popup-link" href="#">Валуйки. Белгородская область</a>
+                                </li>
+                                <li class="list-popup-item">
+                                    <a class="list-popup-link" href="#">Иваново. Ивановская область</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    -->
+                    <!-- /Показывается list-popup, если есть результаты поиска -->
+                </div>
+            </form>
+            <ul class="city-main">
+                <li class="city-main-item">
+                    <a class="city-button city-button_active button button_simple" href="#">Пенза</a>
+                </li>
+                <li class="city-main-item">
+                    <a class="city-button button button_simple" href="#">Санкт-Петербург</a>
+                </li>
+                <li class="city-main-item">
+                    <a class="city-button button button_simple" href="#">Москва</a>
+                </li>
+                <li class="city-main-item">
+                    <a class="city-button button button_simple" href="#">Минск</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="city-popup-mob" class="city-mob">
+            <div class="city-mob-panel city-mob-container">
+                <span class="city-mob-title h2">Выберите свой город</span>
+            </div>
+            <div class="js-find" data-find-hide="city-mob-list-item_hide" data-find-show="city-mob-list-item_show">
+                <div class="city-mob-container">
+                    <form>
+                        <div class="city-mob-field js-search" data-search-dynamic="search_dynamic">
+                            <input class="city-mob-input input input_simple js-search-input js-find-input" type="text" placeholder="Введите Ваш город" name="city" />
+                            <a class="city-mob-reset js-search-reset" href="javascript:;">Отмена</a>
+                        </div>
+                    </form>
+                    <ul class="city-main">
+                        <li class="city-main-item">
+                            <a class="city-button button button_simple" href="#">Санкт-Петербург</a>
+                        </li>
+                        <li class="city-main-item">
+                            <a class="city-button button button_simple" href="#">Пенза</a>
+                        </li>
+                        <li class="city-main-item">
+                            <a class="city-button button button_simple" href="#">Москва</a>
+                        </li>
+                        <li class="city-main-item">
+                            <a class="city-button button button_simple" href="#">Минск</a>
+                        </li>
+                        <li class="city-main-item">
+                            <a class="city-button button button_simple" href="#">Тамбов</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="city-mob-list">
+                    <!-- Текущий город: класс city-mob-list-item_active-->
+                    <li class="city-mob-list-item city-mob-list-item_active js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Абаза
+                        </a>
+                    </li>
+                    <li class="city-mob-list-item js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Алупка
+                        </a>
+                    </li>
+                    <li class="city-mob-list-item js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Абакан
+                        </a>
+                    </li>
+                    <li class="city-mob-list-item js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Ардатов
+                        </a>
+                    </li>
+                    <li class="city-mob-list-item js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Абдулино
+                        </a>
+                    </li>
+                    <li class="city-mob-list-item js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Абинск
+                        </a>
+                    </li>
+                    <li class="city-mob-list-item js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Агидель
+                        </a>
+                    </li>
+                    <li class="city-mob-list-item js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Адыгейск
+                        </a>
+                    </li>
+                    <li class="city-mob-list-item js-find-container">
+                        <a class="city-mob-list-link js-find-value" href="#">
+                            <svg class="city-mob-icon" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.6596 17.6351C11.4087 18.2492 10.76 18.5952 10.1113 18.4697C9.46262 18.34 8.95663 17.7735 8.95663 17.1118V9.50032H1.34516C0.722837 9.50032 0.153707 9.03325 0.0261285 8.38455C-0.10145 7.73585 0.247986 7.08714 0.85993 6.83631L16.0837 0.607881C16.5984 0.396835 17.1909 0.516197 17.5844 0.910177C17.9779 1.30459 18.099 1.89707 17.8871 2.41301L11.6596 17.6351Z" fill="#C5C6C7"/>
+                            </svg>Агрыз
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
     </div>
 

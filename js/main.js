@@ -116,11 +116,11 @@ function initPopup() {
         smallBtn : true,
         btnTpl: {
             smallBtn:
-                '<button type="button" data-fancybox-close class="fancybox-close">' +
-                '<svg class="fancybox-close-icon" width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-                '<path d="M4.43813 3.48015L6.78457 1.11987C6.90032 0.992969 6.96286 0.825999 6.95915 0.653818C6.95544 0.481637 6.88576 0.317552 6.76465 0.195813C6.64355 0.0740734 6.48038 0.00408869 6.30921 0.000467177C6.13803 -0.00315433 5.97208 0.0598672 5.846 0.176377L3.50016 2.53604L1.15371 0.175765C1.02755 0.0593372 0.861561 -0.00357608 0.690389 0.000157127C0.519217 0.00389033 0.356092 0.0739815 0.235066 0.1958C0.11404 0.317618 0.0444653 0.481749 0.040865 0.653932C0.0372647 0.826116 0.099917 0.993044 0.215744 1.11987L2.56158 3.47953L0.215135 5.83981C0.149117 5.90073 0.0960368 5.97446 0.0590912 6.05657C0.0221455 6.13867 0.00209814 6.22744 0.000156047 6.31754C-0.00178605 6.40764 0.0144172 6.4972 0.0477904 6.58084C0.0811636 6.66448 0.131017 6.74045 0.194348 6.8042C0.25768 6.86795 0.33318 6.91814 0.416304 6.95177C0.499428 6.98539 0.588456 7.00175 0.67803 6.99985C0.767603 6.99796 0.855869 6.97785 0.937514 6.94074C1.01916 6.90363 1.09249 6.85028 1.15311 6.78392L3.50016 4.42303L5.8466 6.7833C5.90717 6.84971 5.98047 6.9031 6.06209 6.94027C6.14371 6.97743 6.23197 6.9976 6.32154 6.99955C6.41111 7.0015 6.50015 6.9852 6.5833 6.95163C6.66644 6.91807 6.74197 6.86792 6.80535 6.80421C6.86872 6.74051 6.91862 6.66456 6.95205 6.58095C6.98548 6.49734 7.00174 6.40778 6.99985 6.31768C6.99797 6.22758 6.97798 6.13879 6.94109 6.05667C6.90419 5.97454 6.85116 5.90077 6.78518 5.83981L4.43813 3.48015Z" fill="#526295"/>\n' +
+                '<button type="button" data-fancybox-close class="fancybox-close" title="{{CLOSE}}">' +
+                '<svg class="fancybox-close-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '<path d="M10.4461 0.553928C10.1401 0.248002 9.64414 0.248002 9.33821 0.553928L5.5 4.39214L1.66179 0.553929C1.35586 0.248002 0.859855 0.248002 0.553928 0.553928C0.248002 0.859855 0.248002 1.35586 0.553928 1.66179L4.39214 5.5L0.553929 9.33821C0.248002 9.64414 0.248002 10.1401 0.553928 10.4461C0.859855 10.752 1.35586 10.752 1.66179 10.4461L5.5 6.60786L9.33821 10.4461C9.64414 10.752 10.1401 10.752 10.4461 10.4461C10.752 10.1401 10.752 9.64414 10.4461 9.33821L6.60786 5.5L10.4461 1.66179C10.752 1.35586 10.752 0.859855 10.4461 0.553928Z" fill="#202430"/>\n' +
                 '</svg>' +
-                '</button>',
+                '</button>'
         },
         lang: "ru",
         i18n: {
@@ -594,6 +594,150 @@ function initPopupCalculate() {
     });
 }
 
+function initFind() {
+    $('.js-find').each(function () {
+        var $element = $(this),
+            $input = $element.find('.js-find-input'),
+            $item = $element.find('.js-find-container'),
+            $value = $element.find('.js-find-value'),
+            classHide = $element.data('find-hide') || 'find-hide',
+            classShow = $element.data('find-show') || 'find-show';
+
+        function startFind() {
+            var value = $input.val().toUpperCase();
+
+            $item.removeClass(classHide);
+            $item.removeClass(classShow);
+
+            if (value.length) {
+                for (let i = 0; i < $value.length; i++) {
+                    var text = $($value[i]).text().toUpperCase();
+                    if (!(text.indexOf(value) + 1)) {
+                        if (!$item.hasClass(classShow)) {
+                            $item.addClass(classShow);
+                        }
+                        $($value[i]).closest('.js-find-container').addClass(classHide).removeClass(classShow);
+                    }
+                }
+            }
+        }
+        startFind();
+
+        $input.on('input', function(){
+            startFind();
+        });
+    });
+}
+
+function initSearch() {
+    $('.js-search').each(function(){
+        var $element = $(this),
+            classDynamic = $(this).data('search-dynamic'),
+            $input = $(this).find('.js-search-input'),
+            $link = $(this).find('.js-search-reset');
+
+        $link.on('click', function(e, data) {
+            $input.val('');
+            $element.removeClass(classDynamic);
+        });
+
+        $input.on('input', function(e, data) {
+            var val = $input.val();
+            if (val != '') {
+                $element.addClass(classDynamic);
+            } else {
+                $element.removeClass(classDynamic);
+            }
+        });
+    });
+}
+
+function initPopupCity() {
+    $(".js-popup-city").fancybox({
+        toolbar  : false,
+        smallBtn : true,
+        btnTpl: {
+            smallBtn:
+                '<button type="button" data-fancybox-close class="fancybox-close" title="{{CLOSE}}">' +
+                '<svg class="fancybox-close-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '<path d="M10.4461 0.553928C10.1401 0.248002 9.64414 0.248002 9.33821 0.553928L5.5 4.39214L1.66179 0.553929C1.35586 0.248002 0.859855 0.248002 0.553928 0.553928C0.248002 0.859855 0.248002 1.35586 0.553928 1.66179L4.39214 5.5L0.553929 9.33821C0.248002 9.64414 0.248002 10.1401 0.553928 10.4461C0.859855 10.752 1.35586 10.752 1.66179 10.4461L5.5 6.60786L9.33821 10.4461C9.64414 10.752 10.1401 10.752 10.4461 10.4461C10.752 10.1401 10.752 9.64414 10.4461 9.33821L6.60786 5.5L10.4461 1.66179C10.752 1.35586 10.752 0.859855 10.4461 0.553928Z" fill="#202430"/>\n' +
+                '</svg>' +
+                '</button>'
+        },
+        lang: "ru",
+        i18n: {
+            ru: {
+                CLOSE: "Закрыть",
+            },
+        },
+        afterShow: function (data) {
+        },
+    });
+}
+
+function initPopupCityMob() {
+    $(".js-popup-city-mob").fancybox({
+        toolbar  : false,
+        smallBtn : true,
+        touch: false,
+        btnTpl: {
+            smallBtn:
+                '<button type="button" data-fancybox-close class="fancybox-close" title="{{CLOSE}}">' +
+                '<svg class="fancybox-close-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '<path d="M10.4461 0.553928C10.1401 0.248002 9.64414 0.248002 9.33821 0.553928L5.5 4.39214L1.66179 0.553929C1.35586 0.248002 0.859855 0.248002 0.553928 0.553928C0.248002 0.859855 0.248002 1.35586 0.553928 1.66179L4.39214 5.5L0.553929 9.33821C0.248002 9.64414 0.248002 10.1401 0.553928 10.4461C0.859855 10.752 1.35586 10.752 1.66179 10.4461L5.5 6.60786L9.33821 10.4461C9.64414 10.752 10.1401 10.752 10.4461 10.4461C10.752 10.1401 10.752 9.64414 10.4461 9.33821L6.60786 5.5L10.4461 1.66179C10.752 1.35586 10.752 0.859855 10.4461 0.553928Z" fill="#202430"/>\n' +
+                '</svg>' +
+                '</button>',
+        },
+        lang: "ru",
+        i18n: {
+            ru: {
+                CLOSE: "",
+            },
+        },
+        beforeShow: function (data) {
+            $('.fancybox-slide').addClass('fancybox-slide_simple');
+        },
+        afterShow: function (data) {
+        },
+    });
+}
+
+function openPopupSuccess(url) {
+    if (typeof(url) == 'undefined') {
+        url = '/';
+    }
+
+    $.fancybox.open({
+        src  : url,
+        type : 'ajax',
+        toolbar  : false,
+        smallBtn : true,
+        afterShow: function (data) {
+            initPopupClose();
+        },
+        btnTpl: {
+            smallBtn:
+                '<button type="button" data-fancybox-close class="fancybox-close" title="{{CLOSE}}">' +
+                '<svg class="fancybox-close-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '<path d="M10.4461 0.553928C10.1401 0.248002 9.64414 0.248002 9.33821 0.553928L5.5 4.39214L1.66179 0.553929C1.35586 0.248002 0.859855 0.248002 0.553928 0.553928C0.248002 0.859855 0.248002 1.35586 0.553928 1.66179L4.39214 5.5L0.553929 9.33821C0.248002 9.64414 0.248002 10.1401 0.553928 10.4461C0.859855 10.752 1.35586 10.752 1.66179 10.4461L5.5 6.60786L9.33821 10.4461C9.64414 10.752 10.1401 10.752 10.4461 10.4461C10.752 10.1401 10.752 9.64414 10.4461 9.33821L6.60786 5.5L10.4461 1.66179C10.752 1.35586 10.752 0.859855 10.4461 0.553928Z" fill="#202430"/>\n' +
+                '</svg>' +
+                '</button>',
+        },
+        lang: "ru",
+        i18n: {
+            ru: {
+                CLOSE: "Закрыть",
+            },
+        }
+    });
+}
+
+function initPopupClose() {
+    $('.js-popup-close').on('click', function () {
+        $.fancybox.close();
+    });
+}
+
 function initResizeWindow() {
     var width = $(window).outerWidth();
     if (width <= GLOBAL.mobile) {
@@ -648,4 +792,8 @@ $(document).ready(function () {
     initPopupCallback();
     initPopupCalculate();
     initSlidertab();
+    initSearch();
+    initFind();
+    initPopupCity();
+    initPopupCityMob();
 });
