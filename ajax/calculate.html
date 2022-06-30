@@ -2,56 +2,69 @@
     <div class="popup-title">Нужно рассчитать стоимость?</div>
     <div class="popup-info content">Заполните форму и мы свяжемся с Вами!</div>
     <form class="js-form-validate">
-        <fieldset>
-            <legend class="field-legend">Шаг 1 из 2. Расскажите о помещении</legend>
-            <div class="popup-container">
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Длина помещения, мм" name="calculate-1" required /><span class="field-icon">*</span>
+        <div class="JS-Slidertab" data-slidertab="{
+            'classActive': 'calculate-item_active'
+        }">
+            <fieldset class="calculate-item JS-Slidertab-Item">
+                <div class="field-legend">
+                    <span class="field-legend-label">Шаг 1 из 2.</span> Расскажите о помещении
                 </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Ширина помещения, мм" name="calculate-2" required /><span class="field-icon">*</span>
+                <div class="popup-container">
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Длина помещения, мм" name="calculate-1" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Ширина помещения, мм" name="calculate-2" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Высота помещения, мм" name="calculate-3" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Высота фальш-потолка, мм" name="calculate-4" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Высота фальш-пола, мм" name="calculate-5" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Назначение" name="calculate-6" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Газовое огнетушащее вещество" name="calculate-7" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="calculate-actions field-actions">
+                        <a class="popup-button button JS-Slidertab-Next" href="javascript:;">Далее</a>
+                    </div>
                 </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Высота помещения, мм" name="calculate-3" required /><span class="field-icon">*</span>
+            </fieldset>
+            <fieldset class="calculate-item JS-Slidertab-Item">
+                <div class="field-legend">
+                    <span class="field-legend-label">Шаг 2 из 2.</span> Оставьте контакты
                 </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Высота фальш-потолка, мм" name="calculate-4" required /><span class="field-icon">*</span>
+                <div class="popup-container">
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Имя" name="name-2" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input js-mask-phone" type="text" placeholder="Телефон" name="phone-2" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input js-mask-email" type="text" placeholder="E-mail" name="email-2" required /><span class="field-icon">*</span>
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <input class="input" type="text" placeholder="Название организации" name="organisation" />
+                    </div>
+                    <div class="field js-form-validate-field">
+                        <textarea class="input input_textarea" placeholder="Сообщение" name="message"></textarea>
+                    </div>
+                    <div class="field-info">Нажимая кнопку «Отправить заявку», Вы даете согласие на обработку <a href="#">персональных данных</a></div>
+                    <div class="calculate-actions field-actions">
+                        <button class="popup-button button">Отправить заявку</button>
+                    </div>
+                    <div class="calculate-back">
+                        <a class="calculate-link JS-Slidertab-Back" href="javascript:;">Вернуться назад</a>
+                    </div>
                 </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Высота фальш-пола, мм" name="calculate-5" required /><span class="field-icon">*</span>
-                </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Назначение" name="calculate-6" required /><span class="field-icon">*</span>
-                </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Газовое огнетушащее вещество" name="calculate-7" required /><span class="field-icon">*</span>
-                </div>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend class="field-legend">Шаг 2 из 2. Оставьте контакты</legend>
-            <div class="popup-container">
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Имя" name="name-2" required /><span class="field-icon">*</span>
-                </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Телефон" name="phone-2" required /><span class="field-icon">*</span>
-                </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="E-mail" name="email-2" required /><span class="field-icon">*</span>
-                </div>
-                <div class="field js-form-validate-field">
-                    <input class="input" type="text" placeholder="Название организации" name="organisation" />
-                </div>
-                <div class="field js-form-validate-field">
-                    <textarea class="input input_textarea" placeholder="Сообщение" name="message"></textarea>
-                </div>
-                <div class="field-info">Нажимая кнопку «Отправить заявку», Вы даете согласие на обработку <a href="#">персональных данных</a></div>
-                <div class="field-actions">
-                    <button class="popup-button button">Отправить заявку</button>
-                </div>
-                <a href="#">Вернуться назад</a>
-            </div>
-        </fieldset>
+            </fieldset>
+        </div>
     </form>
 </div>

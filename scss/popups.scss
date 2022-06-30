@@ -161,6 +161,8 @@
         text-align: center;
     }
     &-container {
+        display: flex;
+        flex-direction: column;
         max-width: 298px;
         margin-left: auto;
         margin-right: auto;
@@ -173,16 +175,13 @@
     and (max-width: $tablet) {
         width: 500px;
         padding: 34px 20px 42px;
-        &-title {
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 24px;
-        }
         &-info {
             margin-bottom: 40px;
         }
         &-button {
-            width: auto;
+            height: 49px;
+            font-size: 14px;
+            line-height: 19px;
         }
     }
     @media screen
@@ -192,8 +191,19 @@
             display: flex;
             flex-direction: column;
         }
+        &-title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+        }
         &-info {
             margin-bottom: 20px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+        &-button {
+            width: auto;
+            height: 46px;
             font-size: 12px;
             line-height: 16px;
         }
