@@ -407,18 +407,16 @@ function initSliderClients() {
                 disabledClass: "slider-button_disabled",
             },
             slidesPerView: "auto",
+            spaceBetween: 0,
             breakpoints: {
                 0: {
                     simulateTouch: false,
-                    spaceBetween: 25,
                 },
                 720: {
                     simulateTouch: false,
-                    spaceBetween: 18,
-                },
+                 },
                 992: {
                     simulateTouch: false,
-                    spaceBetween: 30,
                 },
             },
             on: {
@@ -637,7 +635,7 @@ function initSearch() {
             $link = $(this).find('.js-search-reset');
 
         $link.on('click', function(e, data) {
-            $input.val('');
+            $input.val('').focus();
             $element.removeClass(classDynamic);
         });
 
@@ -671,6 +669,7 @@ function initPopupCity() {
             },
         },
         afterShow: function (data) {
+            initScroll();
         },
     });
 }
@@ -738,6 +737,91 @@ function initPopupClose() {
     });
 }
 
+function initFix() {
+    if (typeof(Fix) === 'undefined' || !jQuery.isFunction(Fix)) {
+        return false;
+    }
+
+    var common = {
+        update: function (){
+        }
+    };
+
+    $('.JS-Fix').not('.JS-Fix-ready').each(function(){
+        var local = GLOBAL.parseData(jQuery(this).data('fix'));
+        new Fix(this, jQuery.extend({}, common, local));
+    });
+}
+
+function initTextFilter() {
+    $('.js-textfilter').each(function(){
+        var $input = $(this).find('.js-textfilter-input');
+
+        $input.jcOnPageFilter({
+            animateHideNShow: true,
+            focusOnLoad: true,
+            highlightColor: "transparent",
+            textColorForHighlights: "inherit",
+            caseSensitive: false,
+            hideNegatives: false,
+            parentLookupClass: "js-textfilter-parent",
+            childBlockClass: "js-textfilter-child"
+        });
+    });
+}
+
+function initTextFilterSearch() {
+    $('.js-textfilter-search').each(function(){
+        var $input = $(this).find('.js-textfilter-search-input');
+
+        $input.jcOnPageFilter({
+            animateHideNShow: true,
+            focusOnLoad: true,
+            highlightColor: "transparent",
+            textColorForHighlights: "inherit",
+            caseSensitive: false,
+            hideNegatives: false,
+            parentLookupClass: "js-textfilter-search-parent",
+            childBlockClass: "js-textfilter-search-child"
+        });
+    });
+}
+
+function initTextFilterCity() {
+    $('.js-textfilter-city').each(function(){
+        var $input = $(this).find('.js-textfilter-city-input');
+
+        $input.jcOnPageFilter({
+            animateHideNShow: true,
+            focusOnLoad: true,
+            highlightColor: "transparent",
+            textColorForHighlights: "inherit",
+            caseSensitive: false,
+            hideNegatives: true,
+            parentLookupClass: "js-textfilter-city-parent",
+            childBlockClass: "js-textfilter-city-child"
+        });
+    });
+}
+
+function initTextFilterCityMob() {
+    $('.js-textfilter-city-mob').each(function(){
+        var $input = $(this).find('.js-textfilter-city-mob-input');
+
+        $input.jcOnPageFilter({
+            animateHideNShow: true,
+            focusOnLoad: true,
+            highlightColor: "transparent",
+            textColorForHighlights: "inherit",
+            caseSensitive: false,
+            hideNegatives: true,
+            parentLookupClass: "js-textfilter-city-mob-parent",
+            childBlockClass: "js-textfilter-city-mob-child"
+        });
+    });
+}
+
+
 function initResizeWindow() {
     var width = $(window).outerWidth();
     if (width <= GLOBAL.mobile) {
@@ -796,4 +880,9 @@ $(document).ready(function () {
     initFind();
     initPopupCity();
     initPopupCityMob();
+    initFix();
+    initTextFilter();
+    initTextFilterSearch();
+    initTextFilterCity();
+    initTextFilterCityMob();
 });

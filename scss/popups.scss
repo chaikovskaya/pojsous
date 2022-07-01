@@ -447,6 +447,18 @@ and (max-width: $mobile){
             background-color: #FAFAFA;
             color: #D50A0A;
         }
+        span {
+            font-weight: 700;
+        }
+    }
+
+    @media screen
+    and (max-width: $tablet){
+        &-link {
+            padding: 11px 17px;
+            font-size: 13px;
+            line-height: 17px;
+        }
     }
 }
 
@@ -500,6 +512,9 @@ and (max-width: $mobile){
         }
     }
     &-list-item_active &-list-link {
+        font-weight: 700;
+    }
+    &-list-label span {
         font-weight: 700;
     }
     &-field {

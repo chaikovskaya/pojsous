@@ -800,7 +800,6 @@
             position: absolute;
             top: 0;
             right: -320px;
-            z-index: 1;
             width: 457px;
             height: 100%;
             background: linear-gradient(to left, #542121 22.71%, rgba(84, 33, 33, 0) 100%);
@@ -1588,8 +1587,12 @@
     &-list {
         margin-bottom: 45px;
     }
-    &-list-item {
+    &-list-block {
         width: auto;
+        display: flex;
+    }
+    &-list-item {
+        margin-right: 30px;
     }
     &-link {
         width: 188px;
@@ -1606,6 +1609,9 @@
         &-list {
             margin-bottom: 40px;
         }
+        &-list-item {
+            margin-right: 18px;
+        }
         &-link {
             width: 115px;
             height: 115px;
@@ -1613,6 +1619,14 @@
     }
     @media screen
     and (max-width: $mobile) {
+        &-list {
+            margin-bottom: 30px;
+        }
+        &-list-block {
+            width: 263px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
         &-link {
             width: 113px;
             height: 113px;
