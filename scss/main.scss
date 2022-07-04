@@ -19,6 +19,7 @@
     &-pic {
         height: 100%;
         max-width: none;
+        object-fit: cover;
     }
     &-decor-1 {
         position: absolute;
@@ -51,10 +52,10 @@
     &-decor-2 {
         position: absolute;
         top: 0;
-        right: 140px;
-        width: 1143px;
+        right: 168px;
+        width: 1459px;
         height: 100%;
-        background: url("../images/main-banner/main-banner-decor-2.png") repeat-y right top;
+        background: linear-gradient(to right, rgba(95, 84, 74, 1) 47.52%, rgba(95, 84, 74, 0) 100%);
         &:after {
             content: '';
             position: absolute;
@@ -63,7 +64,7 @@
             width: 100vw;
             max-width: none;
             height: 100%;
-            background-color: rgba(95, 84, 74, 0.89);
+            background-color: rgba(95, 84, 74, 1);
         }
     }
     &-decor-3 {
@@ -296,12 +297,16 @@
         text-align: center;
     }
     &-container {
+        padding-top: 6px;
     }
     &-slider-nav {}
 
     @media screen
     and (max-width: $tablet){
         margin-bottom: 120px;
+        &-container {
+            padding-top: 0;
+        }
         &-list {
             margin-bottom: 40px;
         }
@@ -353,7 +358,6 @@
     &-name {
         display: block;
         min-height: 60px;
-        max-width: 200px;
         font-size: 18px;
         line-height: 20px;
         color: #202430;
@@ -410,14 +414,37 @@
     }
     &-more-button {}
 
+    &-actions {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+    &:hover &-actions {
+        visibility: visible;
+    }
+
+    &_simple {}
+
     @media screen
     and (max-width: $tablet){
+        display: flex;
+        flex-direction: column;
         &:hover {
             margin-top: 0;
             margin-bottom: 0;
             padding-bottom: 0;
         }
         &-info {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             padding: 14px 20px 25px;
         }
         &-name {
@@ -433,6 +460,7 @@
             text-align: center;
         }
         &-box {
+            margin-top: auto;
             position: static;
             display: block;
             padding-right: 0;
@@ -459,6 +487,25 @@
         }
         &-pic {
             height: 206px;
+        }
+        &-actions {
+            margin-top: auto;
+            visibility: visible;
+            position: static;
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: transparent;
+            text-align: center;
+        }
+        &_simple &-name {
+            max-width: 243px;
+        }
+    }
+    @media screen
+    and (max-width: $mobile){
+        &_simple &-info {
+            padding-bottom: 40px;
         }
     }
 }
@@ -677,19 +724,19 @@
 }
 
 .about {
-    margin-bottom: 125px;
+    margin-bottom: 132px;
     &-container {
         display: flex;
     }
     &-img {
-        width: 52%;
+        width: 51%;
         padding-right: 30px;
     }
     &-pic {
         display: block;
     }
     &-detail {
-        width: 48%;
+        width: 49%;
     }
     &-name {
         margin-bottom: 22px;
@@ -839,6 +886,7 @@
         border-left: 3px solid #2873B9;
     }
     &_questions {
+        margin-bottom: 119px;
         &:before {
             background-color: #51527A;
         }
@@ -965,6 +1013,8 @@
     &-img {
         display: block;
         width: 100%;
+        height: 298px;
+        object-fit: cover;
     }
     &-info {
         display: block;
@@ -1036,6 +1086,11 @@
         height: 32px;
     }
     &-more-button {}
+
+    &_simple {}
+    &_simple &-link {
+        width: 298px;
+    }
 
     @media screen
     and (max-width: $tablet){
@@ -1194,7 +1249,7 @@
     &-list-block {
         display: flex;
         overflow: hidden;
-        min-height: 267px;
+        min-height: 265px;
         background-color: #fff;
         box-shadow: 0px 10px 75px rgba(9, 36, 51, 0.15);
         border-radius: 5px;
@@ -1203,6 +1258,7 @@
         width: 298px;
         min-width: 298px;
         display: flex;
+        overflow: hidden;
     }
     &-list-img {
         height: 100%;
@@ -1408,7 +1464,7 @@
 }
 
 .map {
-    margin-bottom: 120px;
+    margin-bottom: 125px;
     max-width: 1107px;
     margin-left: auto;
     margin-right: auto;
@@ -1537,6 +1593,12 @@
     }
     &-point:hover &-point-icon {
         transform: scale(1.3);
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        &-svg {
+            height: 440px;
+        }
     }
 
     @media screen

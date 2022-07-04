@@ -635,7 +635,7 @@ function initSearch() {
             $link = $(this).find('.js-search-reset');
 
         $link.on('click', function(e, data) {
-            $input.val('').focus();
+            $input.val('').trigger('keyup');
             $element.removeClass(classDynamic);
         });
 
@@ -789,7 +789,10 @@ function initTextFilterSearch() {
 
 function initTextFilterCity() {
     $('.js-textfilter-city').each(function(){
-        var $input = $(this).find('.js-textfilter-city-input');
+        var $element = $(this),
+            $input = $(this).find('.js-textfilter-city-input'),
+            $list = $element.find('.js-textfilter-city-list'),
+            classActive = $element.data('textfilter-class') || 'active';
 
         $input.jcOnPageFilter({
             animateHideNShow: true,
@@ -798,15 +801,28 @@ function initTextFilterCity() {
             textColorForHighlights: "inherit",
             caseSensitive: false,
             hideNegatives: true,
+            parentSectionClass: "js-textfilter-city-list",
             parentLookupClass: "js-textfilter-city-parent",
             childBlockClass: "js-textfilter-city-child"
+        });
+
+        $input.keyup(function(e) {
+            var len = $element.find('.js-textfilter-city-child span').length;
+            if (len > 0) {
+                $element.addClass(classActive);
+            } else {
+                $element.removeClass(classActive);
+            }
         });
     });
 }
 
 function initTextFilterCityMob() {
     $('.js-textfilter-city-mob').each(function(){
-        var $input = $(this).find('.js-textfilter-city-mob-input');
+        var $element = $(this),
+            $input = $element.find('.js-textfilter-city-mob-input'),
+            $list = $element.find('.js-textfilter-city-mob-list'),
+            classActive = $element.data('textfilter-class') || 'active';
 
         $input.jcOnPageFilter({
             animateHideNShow: true,
@@ -815,9 +831,36 @@ function initTextFilterCityMob() {
             textColorForHighlights: "inherit",
             caseSensitive: false,
             hideNegatives: true,
+            parentSectionClass: "js-textfilter-city-mob-list",
             parentLookupClass: "js-textfilter-city-mob-parent",
             childBlockClass: "js-textfilter-city-mob-child"
         });
+
+        $input.keyup(function(e) {
+            var len = $element.find('.js-textfilter-city-mob-child span').length;
+            if (len > 0) {
+                $list.addClass(classActive);
+            } else {
+                $list.removeClass(classActive);
+            }
+        });
+    });
+}
+
+function initScrollTop() {
+    var $scrolltop = $('.js-scrolltop'),
+        scrolltopActiveClass = $scrolltop.data('scrolltop');
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 1) {
+            $scrolltop.addClass(scrolltopActiveClass);
+        } else {
+            $scrolltop.removeClass(scrolltopActiveClass);
+        }
+    });
+    $scrolltop.click(function(){
+        $('html, body').animate({scrollTop: '0px'}, 500);
+        return false;
     });
 }
 
@@ -885,4 +928,5 @@ $(document).ready(function () {
     initTextFilterSearch();
     initTextFilterCity();
     initTextFilterCityMob();
+    initScrollTop();
 });

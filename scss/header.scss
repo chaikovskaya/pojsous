@@ -156,6 +156,10 @@
 
 .header {
     box-shadow: 0px 5px 50px rgba(9, 36, 51, 0.08);
+    margin-bottom: 45px;
+    .main-page & {
+        margin-bottom: 0;
+    }
     &-top {
         height: 50px;
         padding-top: 14px;
@@ -394,6 +398,7 @@
 
     @media screen
     and (max-width: $tablet){
+        margin-bottom: 30px;
         &-logo {
             margin-right: 20px;
             min-width: 116px;
@@ -454,6 +459,7 @@
 
     @media screen
     and (max-width: $mobile){
+        margin-bottom: 20px;
         &-top {
             display: none;
         }
@@ -618,9 +624,6 @@
         height: 18px;
     }
     &-close-panel {
-        position: absolute;
-        top: 0;
-        left: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -656,12 +659,11 @@
 
     &-block {
         position: fixed;
-        top: 50px;
+        top: 0;
         right: 0;
         z-index: 1000;
         width: 100%;
-        height: calc(100% - 50px);
-        padding-top: 86px;
+        height: 100%;
         background-color: #fff;
         border: solid #eaeaea;
         border-width: 0 1px 1px 0;
@@ -1144,7 +1146,7 @@
     }
     &-search-result {
         position: fixed;
-        top: 90px;
+        top: 138px;
         left: 0;
         z-index: 1;
         background-color: #fff;
@@ -1341,7 +1343,7 @@ body.mob-menu-show {
         display: flex;
     }
     &-item {
-        margin-right: 12px;
+        margin-right: 17px;
         &:last-child {
             margin-right: 0;
         }
@@ -1366,6 +1368,12 @@ body.mob-menu-show {
     }
     &-list_light &-link:hover &-icon_whatsapp path {
         fill: #47B157;
+    }
+    @media screen
+    and (max-width: $tablet){
+        &-item {
+            margin-right: 12px;
+        }
     }
 }
 

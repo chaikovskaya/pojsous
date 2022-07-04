@@ -387,9 +387,21 @@ and (max-width: $mobile){
         position: relative;
         z-index: 2;
     }
-    .search_dynamic &-input {
+    &-list-popup {
+        display: none;
+    }
+    &-input:placeholder-shown ~ &-list-popup {
+        display: none!important;
+    }
+    &-field_active {
+    }
+    &-field_active &-list-popup {
+        display: block;
+    }
+    &-field_active &-input {
         border-color: transparent;
     }
+
     @media screen
     and (max-width: $tablet){
         &-main-item {
@@ -495,10 +507,6 @@ and (max-width: $mobile){
         }
     }
     &-list-item_active {}
-    &-list-item_hide {
-        display: none;
-    }
-    &-list-item_show {}
     &-list-link {
         display: flex;
         align-items: center;
@@ -540,7 +548,9 @@ and (max-width: $mobile){
         display: none;
         margin-right: 15px;
     }
-    &-list-item_show &-icon {
+    &-list_active {
+    }
+    &-list_active &-icon {
         display: block;
     }
 

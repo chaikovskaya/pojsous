@@ -14,28 +14,29 @@
     &-main-container {
         display: flex;
         padding-top: 53px;
-        padding-bottom: 40px;
+        padding-bottom: 51px;
     }
     &-main-item {
         width: 30%;
     }
     &-main-item_company {
-        width: 33.7%;
+        width: 34%;
     }
     &-main-item_menu {
         width: 21%;
     }
     &-main-item_address {
-        width: 30%;
+        width: 25%;
     }
     &-main-item_contacts {
-        width: 15%;
+        width: 20%;
     }
     &-main-block {
         max-width: 255px;
     }
     &-main-item_contacts &-main-block {
         min-width: 150px;
+        float: right;
     }
     &-logo {
         display: block;
@@ -49,7 +50,7 @@
     &-menu {
     }
     &-menu-item {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
         &:last-child {
             margin-bottom: 0;
         }
@@ -111,10 +112,10 @@
         color: #FFFFFF;
     }
     &-develop-link {
-        margin-left: 8px;
+        margin-left: 9px;
     }
     &-develop-logo {
-        width: 156px;
+        width: 145px;
         height: 26px;
     }
     &-company {
@@ -157,6 +158,7 @@
     }
     &-contacts-icon {
         width: 16px;
+        height: 16px;
         margin-right: 7px;
     }
     &-contacts-icon_mail {
@@ -257,6 +259,9 @@
         &-develop-link {
             margin-top: -2px;
         }
+        &-socials .socials-item {
+            margin-right: 15px;
+        }
         &-socials .socials-icon {
             width: 37px;
             height: 37px;
@@ -308,6 +313,7 @@
         }
         &-main-item_contacts &-main-block {
             margin-left: auto;
+            float: none;
         }
         &-main-item_address &-main-block {
             margin-left: auto;
@@ -341,6 +347,9 @@
             border-bottom: 1px solid #fff;
             padding-bottom: 24px;
             margin-bottom: 24px;
+        }
+        &-socials .socials-item {
+            margin-right: 10px;
         }
         .socials-list {
             justify-content: flex-end;
