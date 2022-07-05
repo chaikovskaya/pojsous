@@ -527,7 +527,10 @@ function initAjaxMoreProducts() {
         return false;
     }
 
-    var lastElement;
+    var lastElement,
+        count = $('.JS-AjaxMore-Products').find('.JS-AjaxMore-Count').text() || 0,
+        countCommon = $('.JS-AjaxMore-Products').find('.JS-AjaxMore-Common').text()|| 0;
+
     var common = {
         beforeSend: function () {
             if ( GLOBAL.widthWindow == 'isTablet' || GLOBAL.widthWindow == 'isMobile') {
@@ -542,7 +545,13 @@ function initAjaxMoreProducts() {
                 if (sliderCatalogProducts == undefined) {
                     initSliderCatalogProducts();
                 }
-                sliderCatalogProducts.slideTo(lastElement - 2, 1000, false);
+                sliderCatalogProducts.slideTo(lastElement, 1000, false);
+            }
+            var index = $('.JS-AjaxMore-Products').find('.JS-AjaxMore-Content li:last-child').data('index');
+
+            if ((index + Number(count)) > countCommon) {
+                var newCount = countCommon - index;
+                $('.JS-AjaxMore-Products').find('.JS-AjaxMore-Count').text(newCount);
             }
         }
     };

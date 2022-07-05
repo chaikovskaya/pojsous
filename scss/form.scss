@@ -505,8 +505,12 @@ label.form-error {
     &-icon {
         display: none;
         vertical-align: middle;
-        margin-left: 2px;
-        color: #1d1d1d;
+        margin-left: 3px;
+        width: 16px;
+        margin-top: -3px;
+        path {
+            fill: #fff;
+        }
     }
     &-block {
     }
