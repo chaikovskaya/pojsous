@@ -431,6 +431,59 @@ function initSliderClients() {
     });
 }
 
+var sliderCatalogProducts = undefined;
+function initSliderCatalogProducts() {
+    jQuery('.js-slider-catalog-products').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderCatalogProducts = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                    spaceBetween: 25,
+                },
+                720: {
+                    simulateTouch: false,
+                    spaceBetween: 15,
+                },
+                992: {
+                    simulateTouch: false,
+                    spaceBetween: 0,
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+function reInitSliderCatalogProducts() {
+    if (sliderCatalogProducts) {
+        sliderCatalogProducts.destroy();
+    }
+    sliderCatalogProducts = undefined;
+}
+
 function initMobileMenu() {
     if (typeof(MobileMenu) === 'undefined' || !jQuery.isFunction(MobileMenu)) {
         return false;
@@ -469,19 +522,32 @@ function initForm() {
     });
 }
 
-function initAjaxMore() {
+function initAjaxMoreProducts() {
     if (typeof(AjaxMore) === 'undefined' || !jQuery.isFunction(AjaxMore)) {
         return false;
     }
 
+    var lastElement;
     var common = {
         beforeSend: function () {
+            if ( GLOBAL.widthWindow == 'isTablet' || GLOBAL.widthWindow == 'isMobile') {
+                if (sliderCatalogProducts != undefined) {
+                    reInitSliderCatalogProducts();
+                }
+                lastElement = $(".js-slider-catalog-products .swiper-slide").length;
+            }
         },
         success: function () {
+            if ( GLOBAL.widthWindow == 'isTablet' || GLOBAL.widthWindow == 'isMobile') {
+                if (sliderCatalogProducts == undefined) {
+                    initSliderCatalogProducts();
+                }
+                sliderCatalogProducts.slideTo(lastElement - 2, 1000, false);
+            }
         }
     };
 
-    $('.JS-AjaxMore').each(function(){
+    $('.JS-AjaxMore-Products').each(function(){
         var local = GLOBAL.parseData(jQuery(this).data('ajaxmore'));
         new AjaxMore(this, jQuery.extend({}, common, local));
     });
@@ -875,6 +941,9 @@ function initResizeWindow() {
         if (sliderNews == undefined) {
             initSliderNews();
         }
+        if (sliderCatalogProducts == undefined) {
+            initSliderCatalogProducts();
+        }
     } else if (width <= GLOBAL.tablet) {
         GLOBAL.widthWindow = 'isTablet';
         if (sliderServices == undefined) {
@@ -883,6 +952,9 @@ function initResizeWindow() {
         if (sliderNews != undefined) {
             reInitSliderNews();
         }
+        if (sliderCatalogProducts == undefined) {
+            initSliderCatalogProducts();
+        }
     } else {
         GLOBAL.widthWindow = '';
         if (sliderServices != undefined) {
@@ -890,6 +962,9 @@ function initResizeWindow() {
         }
         if (sliderNews != undefined) {
             reInitSliderNews();
+        }
+        if (sliderCatalogProducts != undefined) {
+            reInitSliderCatalogProducts();
         }
     }
 }
@@ -914,7 +989,7 @@ $(document).ready(function () {
     initSliderClients();
     initMobileMenu();
     initForm();
-    initAjaxMore();
+    initAjaxMoreProducts();
     initDropdownSearch();
     initPopupCallback();
     initPopupCalculate();

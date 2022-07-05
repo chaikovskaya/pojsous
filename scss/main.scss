@@ -430,14 +430,19 @@
         visibility: visible;
     }
 
-    &_simple {}
+    &_simple {
+        &:hover {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
 
     @media screen
     and (max-width: $tablet){
         display: flex;
         flex-direction: column;
         &:hover {
-            margin-top: 0;
+            top: 0;
             margin-bottom: 0;
             padding-bottom: 0;
         }
