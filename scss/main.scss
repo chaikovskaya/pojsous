@@ -301,6 +301,10 @@
     }
     &-slider-nav {}
 
+    &_simple {
+        margin-bottom: 0;
+    }
+
     @media screen
     and (max-width: $tablet){
         margin-bottom: 120px;
@@ -314,6 +318,9 @@
             width: 210px;
             min-height: 100%;
             height: auto;
+        }
+        &_simple {
+            margin-bottom: 0;
         }
     }
     @media screen

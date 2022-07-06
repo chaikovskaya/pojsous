@@ -484,6 +484,113 @@ function reInitSliderCatalogProducts() {
     sliderCatalogProducts = undefined;
 }
 
+var sliderCategory = undefined;
+function initSliderCategory() {
+    jQuery('.js-slider-category').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderCategory = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                    spaceBetween: 25,
+                },
+                720: {
+                    simulateTouch: false,
+                    spaceBetween: 15,
+                },
+                992: {
+                    simulateTouch: false,
+                    spaceBetween: 0,
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+function reInitSliderCategory() {
+    if (sliderCategory) {
+        sliderCategory.destroy();
+    }
+    sliderCategory = undefined;
+}
+
+var sliderTabs = undefined;
+function initSliderTabs() {
+    jQuery('.js-slider-tabs').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderTabs = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                    spaceBetween: 15,
+                    centeredSlides: true,
+                },
+                720: {
+                    simulateTouch: false,
+                    spaceBetween: 15,
+                  },
+                992: {
+                    simulateTouch: false,
+                    spaceBetween: 0,
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+function reInitSliderTabs() {
+    if (sliderTabs) {
+        sliderTabs.destroy();
+    }
+    sliderTabs = undefined;
+}
+
 function initMobileMenu() {
     if (typeof(MobileMenu) === 'undefined' || !jQuery.isFunction(MobileMenu)) {
         return false;
@@ -939,6 +1046,43 @@ function initScrollTop() {
     });
 }
 
+function initTab() {
+    if (typeof(Tab) === 'undefined' || !jQuery.isFunction(Tab)) {
+        return false;
+    }
+
+    var common = {};
+
+    jQuery('.JS-Tab').not('.JS-Tab-ready').each(function() {
+        var local = GLOBAL.parseData(jQuery(this).data('tab'));
+        new Tab(this, jQuery.extend({}, common, local));
+    });
+}
+
+function initHorizontalScroll() {
+    $('.js-horizontal-scroll').each(function () {
+        var customScroll = $(this),
+            $item = $(this).find('.js-horizontal-scroll-item').eq(0),
+            $buttonLeft = $('.js-hscroll-left'),
+            $buttonRight = $('.js-hscroll-right'),
+            step = 180;
+
+        new SimpleBar(customScroll[0], {
+            autoHide: false
+        });
+
+        $buttonLeft.on('click', function() {
+            var container = $('.js-horizontal-scroll .simplebar-content-wrapper');
+            container.animate( { scrollLeft: '-=' + step }, 100);
+        });
+
+        $buttonRight.on('click', function() {
+            var container = $('.js-horizontal-scroll .simplebar-content-wrapper');
+            container.animate( { scrollLeft: '+=' + step }, 100);
+        });
+    });
+}
+
 
 function initResizeWindow() {
     var width = $(window).outerWidth();
@@ -953,6 +1097,12 @@ function initResizeWindow() {
         if (sliderCatalogProducts == undefined) {
             initSliderCatalogProducts();
         }
+        if (sliderCategory == undefined) {
+            initSliderCategory();
+        }
+        if (sliderTabs == undefined) {
+            initSliderTabs();
+        }
     } else if (width <= GLOBAL.tablet) {
         GLOBAL.widthWindow = 'isTablet';
         if (sliderServices == undefined) {
@@ -964,6 +1114,12 @@ function initResizeWindow() {
         if (sliderCatalogProducts == undefined) {
             initSliderCatalogProducts();
         }
+        if (sliderCategory != undefined) {
+            reInitSliderCategory();
+        }
+        if (sliderTabs == undefined) {
+            initSliderTabs();
+        }
     } else {
         GLOBAL.widthWindow = '';
         if (sliderServices != undefined) {
@@ -974,6 +1130,12 @@ function initResizeWindow() {
         }
         if (sliderCatalogProducts != undefined) {
             reInitSliderCatalogProducts();
+        }
+        if (sliderCategory != undefined) {
+            reInitSliderCategory();
+        }
+        if (sliderTabs != undefined) {
+            reInitSliderTabs();
         }
     }
 }
@@ -1013,4 +1175,6 @@ $(document).ready(function () {
     initTextFilterCity();
     initTextFilterCityMob();
     initScrollTop();
+    initTab();
+    initHorizontalScroll();
 });

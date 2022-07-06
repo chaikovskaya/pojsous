@@ -17,27 +17,31 @@
     }
     &-button {}
     &-callback {
-        display: none;
+        display: flex;
+        flex-direction: column;
         position: relative;
         height: 100%;
         min-height: 100%;
-        padding: 46px 22px 25px;
+        padding: 50px 22px 57px;
         background-color: #ECEDF0;
         border-radius: 5px;
         text-decoration: none;
     }
     &-callback-name {
         display: block;
-        margin-bottom: 57px;
+        margin-bottom: 52px;
         color: #202430;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 24px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
         text-align: center;
     }
     &-callback-info {
         display: block;
-        margin-bottom: 57px;
+        max-width: 186px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 52px;
         border-left: 3px solid #2873B9;
         padding-left: 15px;
     }
@@ -51,6 +55,10 @@
         bottom: 0;
         right: 0;
         max-width: 60%;
+    }
+    &-callback-actions {
+        margin-top: auto;
+        text-align: center;
     }
 
     @media screen
@@ -80,12 +88,19 @@
             margin-bottom: 35px;
         }
         &-callback {
-            display: flex;
-            flex-direction: column;
+            padding-top: 46px;
+            padding-bottom: 25px;
         }
         &-callback-info {
+            margin-bottom: 57px;
             font-size: 14px;
             line-height: 22px;
+        }
+        &-callback-name {
+            margin-bottom: 57px;
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 700;
         }
     }
 

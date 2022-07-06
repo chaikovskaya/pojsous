@@ -1,14 +1,18 @@
 
 .category {
+    &-products {
+        margin-bottom: 90px;
+    }
     &-list {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: 30px;
+        width: auto;
         margin-right: -15px;
         margin-left: -15px;
     }
     &-list-item {
         width: 25%;
+        height: auto;
         padding-right: 15px;
         padding-left: 15px;
         margin-bottom: 30px;
@@ -19,6 +23,7 @@
     &-props {
         margin-bottom: 120px;
     }
+    &-props-detail {}
 
     @media screen
     and (max-width: $desktop) {
@@ -26,20 +31,41 @@
 
     @media screen
     and (max-width: $tablet){
+        &-products {
+            margin-bottom: 50px;
+        }
+        &-list {
+            margin-right: -7px;
+            margin-left: -7px;
+        }
         &-list-item {
             width: 33.3%;
             padding-right: 7px;
             padding-left: 7px;
             margin-bottom: 50px;
         }
+        &-props {
+            margin-bottom: 100px;
+        }
+        &-props-detail {
+            h2 {
+                margin-bottom: 30px;
+                border-left: 3px solid #2873B9;
+                padding-left: 15px;
+            }
+        }
     }
 
     @media screen
     and (max-width: $mobile){
+        &-products {
+            margin-bottom: 120px;
+        }
         &-list {
             flex-wrap: nowrap;
             margin-right: 0;
             margin-left: 0;
+            margin-bottom: 40px;
         }
         &-list-item {
             width: 206px;
@@ -53,4 +79,56 @@
     }
 }
 
-
+.files {
+    display: flex;
+    flex-wrap: wrap;
+    &-item {
+        width: 26%;
+        padding-right: 30px;
+        margin-bottom: 35px;
+    }
+    &-link {
+        display: flex;
+        align-items: center;
+        max-width: 298px;
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: none;
+        color: #202430!important;
+        &:hover {
+            text-decoration: none;
+            color: #D50A0A!important;
+        }
+    }
+    &-icon {
+        width: 55px;
+        margin-right: 29px;
+    }
+    &-link:hover &-icon {
+        opacity: 0.5;
+    }
+    @media screen
+    and (max-width: $tablet){
+        &-item {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        &-link {
+            max-width: 260px;
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &-icon {
+            margin-right: 15px;
+        }
+    }
+    @media screen
+    and (max-width: $mobile){
+        &-item {
+            width: 100%;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
