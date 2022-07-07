@@ -17,6 +17,9 @@
         padding-left: 15px;
         margin-bottom: 30px;
     }
+    &-list-item_banner {
+        flex-grow: 1;
+    }
     &-slider-nav {
         display: none;
     }
@@ -24,6 +27,7 @@
         margin-bottom: 120px;
     }
     &-props-detail {}
+    &-table {}
 
     @media screen
     and (max-width: $desktop) {
@@ -73,8 +77,14 @@
             padding-left: 0;
             margin-bottom: 0;
         }
+        &-list-item_banner {
+            display: none;
+        }
         &-slider-nav {
             display: block;
+        }
+        &-table {
+            min-width: 500px;
         }
     }
 }

@@ -66,12 +66,16 @@ h4,
 	max-width: 600px;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 }
 
 .table {
+	min-width: 100%;
+	margin-bottom: 13px;
 	border-collapse: collapse;
 	tr {}
 	th {
+		min-width: 130px;
 		padding: 15px 18px 15px;
 		background-color: #ECEDF0;
 		font-size: 14px;
@@ -79,35 +83,6 @@ h4,
 		color: #202430;
 		font-weight: 400;
 		text-align: center;
-		&:first-child {
-			padding-left: 0;
-		}
-		&:first-child {
-			position: relative;
-			&:after {
-				content: '';
-				position: absolute;
-				top: 0;
-				right: 100%;
-				width: 50vw;
-				max-width: none;
-				height: 100%;
-				background-color: #ECEDF0;
-			}
-		}
-		&:last-child {
-			position: relative;
-			&:after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 100%;
-				width: 50vw;
-				max-width: none;
-				height: 100%;
-				background-color: #ECEDF0;
-			}
-		}
 	}
 	td {
 		padding: 15px 18px 15px;
@@ -115,44 +90,13 @@ h4,
 		line-height: 19px;
 		font-weight: 400;
 		text-align: center;
-		&:first-child {
-			padding-left: 0;
-		}
 	}
 	tr:nth-child(2n-1) {
 		background-color: #F8F8F8;
 	}
-	tr:nth-child(2n-1) td {
-		&:first-child {
-			position: relative;
-			&:after {
-				content: '';
-				position: absolute;
-				top: 0;
-				right: 100%;
-				width: 50vw;
-				max-width: none;
-				height: 100%;
-				background-color: #F8F8F8;
-			}
-		}
-		&:last-child {
-			position: relative;
-			&:after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 100%;
-				width: 50vw;
-				max-width: none;
-				height: 100%;
-				background-color: #F8F8F8;
-			}
-		}
-	}
 	&-name {
 		color: #202430;
-		width: 165px;
+		min-width: 195px;
 	}
 	& &-name {
 		text-align: left;
@@ -176,7 +120,6 @@ h4,
 	}
 	@media screen
 	and (max-width: $mobile){
-
 	}
 }
 
@@ -392,17 +335,71 @@ blockquote {
 /* /simplebar */
 
 
-.scroll-buttons {
-	position: relative;
-	&-left {
-		position: absolute;
-		top: 0;
-		left: 0;
+.scroll-simple {
+	&-buttons {
+		display: none;
+		position: relative;
+		margin-left: 175px;
 	}
-	&-right {
+	&-buttons-left {
 		position: absolute;
-		top: 0;
+		top: -7px;
+		left: 0;
+		width: 6px;
+		height: 10px;
+		line-height: 0;
+	}
+	&-buttons-right {
+		position: absolute;
+		top: -7px;
 		right: 0;
+		width: 6px;
+		height: 10px;
+		line-height: 0;
+	}
+	&_active {}
+	&_active + &-buttons {
+		display: block;
+	}
+	.simplebar-scrollbar:before {
+		background: #2873B9;
+		border-radius: 2px;
+	}
+	.simplebar-track.simplebar-horizontal {
+		left: 0;
+		right: 0;
+		height: 4px;
+		background-color: #EEEEEF;
+		margin-left: 190px;
+		margin-right: 16px;
+	}
+	.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+		top: 0;
+		height: 4px;
+	}
+	.simplebar-track {
+		border-radius: 2px;
+	}
+
+	@media screen
+	and (max-width: $tablet){
+		&-buttons {
+			margin-left: 0;
+		}
+		.simplebar-track.simplebar-horizontal {
+			margin-left: 12px;
+		}
+	}
+	@media screen
+	and (max-width: $mobile){
+		margin-left: -20px;
+		margin-right: -20px;
+		.simplebar-track.simplebar-horizontal {
+			margin-left: 32px;
+		}
+		.simplebar-track.simplebar-horizontal {
+			margin-right: 36px;
+		}
 	}
 }
 
@@ -433,18 +430,6 @@ blockquote {
 }
 
 .content {
-	h1, .h1 {
-		margin-top: 47px;
-		&:first-child {
-			margin-top: 0;
-		}
-	}
-	h2, .h2 {
-		margin-top: 47px;
-		&:first-child {
-			margin-top: 0;
-		}
-	}
     b {
 		color: #0D0C0B;
 	}
@@ -887,7 +872,7 @@ blockquote {
 	&-menu-item_active {}
 	&-menu-item_active &-menu-link {
 		color: #fff;
-		background-color: #2873B9;
+		background-color: #D50A0A;
 		&:active {
 			color: #fff;
 			background-color: #D50A0A;
@@ -897,10 +882,14 @@ blockquote {
 		display: block;
 	}
 	&-item {
-		display: none;
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
 	}
 	&-item_active {
-		display: block;
+		visibility: visible;
+		height: auto;
+		overflow: visible;
 	}
 
 	@media screen
@@ -912,9 +901,6 @@ blockquote {
 		&-menu-item {
 			margin-right: 0;
 			margin-bottom: 0;
-		}
-		&-menu-item_active &-menu-link {
-			background-color: #D50A0A;
 		}
 	}
 	@media screen

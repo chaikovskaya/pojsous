@@ -1,0 +1,304 @@
+
+.card {
+    &-title {
+        text-align: left;
+        max-width: 810px;
+        margin-left: 0;
+        margin-right: 0;
+        text-transform: none;
+        margin-bottom: 0;
+    }
+    &-panel {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 45px;
+    }
+    &-links {
+        display: flex;
+        margin-left: auto;
+        margin-top: 6px;
+    }
+    &-links-label {
+        width: 33px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: width 0.2s linear;
+    }
+    &-links-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 33px;
+        width: 33px;
+        height: 33px;
+        background-color: #D50A0A;
+        border-radius: 50%;
+    }
+    &-links-arrow {
+    }
+    &-links-name {
+        display: none;
+        color: #202430;
+        font-size: 16px;
+        line-height: 24px;
+        white-space: nowrap;
+    }
+    &-links-label_left {
+        margin-right: 12px;
+    }
+    &-links-label_right {
+        margin-left: 12px;
+    }
+    &-links-label_left &-links-name {
+        margin-left: 9px;
+    }
+    &-links-label_right {
+        margin-left: 12px;
+    }
+    &-links-label_right &-links-name {
+        margin-right: 9px;
+    }
+    &-links-label:hover {
+        width: 210px;
+    }
+    &-links-label:hover &-links-icon {
+        background-color: #202430;
+    }
+    &-links-label:hover &-links-name {
+        display: block;
+    }
+
+    &-container {
+        display: flex;
+        margin-bottom: 120px;
+    }
+    &-gallery {
+        width: 546px;
+        padding-right: 30px;
+    }
+    &-gallery-thumbs {
+        position: relative;
+        overflow: hidden;
+        .swiper-slide {
+            flex-flow: column nowrap;
+            width: 118px;
+            height: auto;
+            cursor: pointer;
+        }
+    }
+    &-gallery-main {
+        position: relative;
+        height: 428px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+    &-gallery-main-list {}
+    &-gallery-main-item {
+        width: 100%;
+    }
+    &-gallery-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        cursor: url(../images/products/popup/zoom-icon.png), pointer;
+    }
+    &-gallery-thumbs-list {
+        margin-top: 29px;
+    }
+    &-thumbs-item {}
+    &-thumbs-item.swiper-slide-thumb-active {
+        opacity: 0.6;
+    }
+    &-gallery-img {
+    }
+    &-gallery-button {
+    }
+
+    &-thumbs-img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    &-thumbs-item {
+        width: 118px;
+        height: 118px;
+    }
+
+    &-detail {
+        flex-grow: 1;
+    }
+    &-name {
+        margin-bottom: 22px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 22px;
+        color: #818A9E;
+    }
+    &-name_mob {
+        display: none;
+        margin-bottom: 20px;
+    }
+    &-content {
+        color: #202430;
+        margin-bottom: 22px;
+    }
+    &-gallery-slider-nav {
+    }
+    &-gallery-pagination {
+    }
+    &-actions {}
+
+    &-props {
+        margin-bottom: 120px;
+    }
+    &-table {}
+
+    @media screen
+    and (max-width: $desktop) {
+    }
+
+    @media screen
+    and (max-width: $notebook) {
+    }
+
+    @media screen
+    and (min-width: $tablet) {
+        &-gallery-button {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: 1;
+            transform: translateY(-50%);
+            background-color: #fff;
+            &:hover {
+                background: #D50A0A;
+            }
+            &:active {
+                background: #B6181D;
+            }
+        }
+        &-gallery-button_left {
+            left: 22px;
+        }
+        &-gallery-button_right {
+            left: auto;
+            right: 22px;
+        }
+        &-gallery-slider-nav {
+            width: 100%;
+        }
+        &-gallery-pagination {
+            position: absolute;
+            bottom: 21px!important;
+            left: auto!important;
+            z-index: 1;
+            .swiper-pagination-bullet {
+                background-color: #D50A0A;
+                margin-right: 3px !important;
+                margin-left: 3px !important;
+            }
+        }
+        &-gallery-icon {
+            path {
+                fill: #D50A0A;
+            }
+        }
+        &-gallery-button:hover &-gallery-icon {
+            path {
+                fill: #fff;
+            }
+        }
+    }
+
+    @media screen
+    and (max-width: $tablet){
+        &-panel {
+            margin-bottom: 20px;
+        }
+        &-title {
+            max-width: 287px;
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &-container {
+            flex-direction: column;
+        }
+        &-gallery-main {
+            margin-bottom: 20px;
+        }
+        &-gallery-main-list {
+            margin-bottom: 20px;
+        }
+        &-gallery {
+            width: 100%;
+            padding-right: 0;
+        }
+        &-links {
+            display: none;
+        }
+        &-gallery-main {
+            height: auto;
+            overflow: visible;
+        }
+        &-gallery-main-item {
+            width: 289px;
+            height: 239px;
+        }
+        &-gallery-thumbs {
+            display: none;
+        }
+        &-gallery-button {
+            position: static;
+        }
+        &-content {
+            color: #818A9E;
+            margin-bottom: 20px;
+        }
+        &-actions {
+            text-align: center;
+        }
+        &-name {
+            display: none;
+        }
+        &-name_mob {
+            display: block;
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+
+    @media screen
+    and (max-width: $mobile){
+        &-container {
+            margin-bottom: 90px;
+        }
+        &-panel {
+            margin-bottom: 18px;
+        }
+        &-gallery-main {
+            argin-bottom: 18px;
+        }
+        &-gallery-main-item {
+            width: 262px;
+            height: 217px;
+        }
+        &-name_mob {
+            margin-bottom: 18px;
+        }
+        &-gallery-main-list {
+            margin-bottom: 18px;
+        }
+        &-actions {
+            text-align: left;
+        }
+        &-table {
+            min-width: 500px;
+        }
+    }
+}

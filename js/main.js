@@ -562,7 +562,6 @@ function initSliderTabs() {
                 0: {
                     simulateTouch: false,
                     spaceBetween: 15,
-                    centeredSlides: true,
                 },
                 720: {
                     simulateTouch: false,
@@ -1061,28 +1060,136 @@ function initTab() {
 
 function initHorizontalScroll() {
     $('.js-horizontal-scroll').each(function () {
-        var customScroll = $(this),
-            $item = $(this).find('.js-horizontal-scroll-item').eq(0),
-            $buttonLeft = $('.js-hscroll-left'),
-            $buttonRight = $('.js-hscroll-right'),
+        var $customScroll = $(this),
+            $buttonLeft = $('.js-horizontal-scroll-left'),
+            $buttonRight = $('.js-horizontal-scroll-right'),
+            classActive = $customScroll.data('active'),
             step = 180;
 
-        new SimpleBar(customScroll[0], {
-            autoHide: false
+        new SimpleBar(this, {
+            autoHide: false,
         });
 
+        var $content = $customScroll.find('.simplebar-content-wrapper'),
+            $track = $customScroll.find('.simplebar-horizontal');
+
+        if ($track.css('visibility') == 'visible') {
+            $customScroll.addClass(classActive);
+        }
+
         $buttonLeft.on('click', function() {
-            var container = $('.js-horizontal-scroll .simplebar-content-wrapper');
-            container.animate( { scrollLeft: '-=' + step }, 100);
+            $content.animate( { scrollLeft: '-=' + step }, 100);
         });
 
         $buttonRight.on('click', function() {
-            var container = $('.js-horizontal-scroll .simplebar-content-wrapper');
-            container.animate( { scrollLeft: '+=' + step }, 100);
+            $content.animate( { scrollLeft: '+=' + step }, 100);
         });
     });
 }
 
+function initBanner() {
+    $('.js-banner').each(function () {
+        var $element = $(this),
+            $item = $element.find('.js-banner-item');
+
+        var itemWidth = $item.innerWidth(),
+            elementWidth = $element.width();
+
+        if (elementWidth == itemWidth) {
+            $item.hide();
+        }
+    });
+}
+
+function initGalleryCard() {
+    var galleryThumbs = new Swiper(".js-gallery-card-thumbs", {
+        loop: true,
+        centeredSlides: false,
+        centeredSlidesBounds: false,
+        spaceBetween: 12,
+        slidesPerView: "auto",
+        autoHeight: true,
+        freeMode: false,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        watchOverflow: true,
+        navigation: false,
+        pagination: false,
+        breakpoints: {
+            0: {
+                spaceBetween: 18,
+            },
+            720: {
+                spaceBetween: 15,
+            },
+        }
+    });
+    var galleryTop = new Swiper(".js-gallery-card-main", {
+        loop: true,
+        direction: "horizontal",
+        spaceBetween: 40,
+        navigation: {
+            nextEl: ".js-slider-next",
+            prevEl: ".js-slider-prev",
+        },
+        pagination: {
+            el: ".js-slider-pagination",
+            dynamicBullets: true,
+            clickable: true,
+        },
+        thumbs: {
+            swiper: galleryThumbs
+        },
+        slidesPerView: "auto",
+        breakpoints: {
+            0: {
+                spaceBetween: 18,
+            },
+            720: {
+                spaceBetween: 15,
+            },
+        }
+    });
+};
+
+function initPopupGallery() {
+    $(".js-popup-gallery").fancybox({
+        loop: true,
+        infobar: false,
+        toolbar  : false,
+        smallBtn : true,
+        arrows : false,
+        animationEffect: "fade",
+        btnTpl: {
+            smallBtn:
+                '<button type="button" data-fancybox-close class="fancybox-close" title="{{CLOSE}}">' +
+                '<svg class="fancybox-close-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '<path d="M10.4461 0.553928C10.1401 0.248002 9.64414 0.248002 9.33821 0.553928L5.5 4.39214L1.66179 0.553929C1.35586 0.248002 0.859855 0.248002 0.553928 0.553928C0.248002 0.859855 0.248002 1.35586 0.553928 1.66179L4.39214 5.5L0.553929 9.33821C0.248002 9.64414 0.248002 10.1401 0.553928 10.4461C0.859855 10.752 1.35586 10.752 1.66179 10.4461L5.5 6.60786L9.33821 10.4461C9.64414 10.752 10.1401 10.752 10.4461 10.4461C10.752 10.1401 10.752 9.64414 10.4461 9.33821L6.60786 5.5L10.4461 1.66179C10.752 1.35586 10.752 0.859855 10.4461 0.553928Z" fill="#202430"/>\n' +
+                '</svg>' +
+                '</button>'
+        },
+        beforeClose: function (instance) {
+        },
+        afterLoad: function(instance, current) {
+            if ( instance.group.length > 1 && current.$content ) {
+                current.$content.append('' +
+                    '<div class="fancybox-nav-block">' +
+                    '<button class="fancybox-button fancybox-button--arrow_left prev" data-fancybox-prev>' +
+                    '<i class="fancybox-button-icon fancybox-button-icon_left icon icon_arrow-left"></i></button>' +
+                    '<button class="fancybox-button fancybox-button--arrow_right next" data-fancybox-next>' +
+                    '<i class="fancybox-button-icon fancybox-button-icon_right icon icon_arrow-right"></i></button>' +
+                    '</div>'
+                );
+            }
+        },
+        lang: "ru",
+        i18n: {
+            ru: {
+                CLOSE: "Закрыть",
+            },
+        },
+    });
+}
 
 function initResizeWindow() {
     var width = $(window).outerWidth();
@@ -1144,6 +1251,7 @@ $(document).ready(function () {
     initResizeWindow();
     $(window).resize(function(){
         initResizeWindow();
+        initBanner();
     });
 
     initDropdown();
@@ -1169,6 +1277,7 @@ $(document).ready(function () {
     initFind();
     initPopupCity();
     initPopupCityMob();
+    initPopupGallery();
     initFix();
     initTextFilter();
     initTextFilterSearch();
@@ -1177,4 +1286,6 @@ $(document).ready(function () {
     initScrollTop();
     initTab();
     initHorizontalScroll();
+    initBanner();
+    initGalleryCard();
 });
