@@ -274,7 +274,7 @@
     @media screen
     and (max-width: $mobile){
         &-logo {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         &-logo-element {
             width: 75px;
@@ -282,6 +282,10 @@
         }
         &-main-button {
             display: none;
+        }
+        &-contacts {
+            margin-top: 13px;
+            margin-bottom: 35px;
         }
         &-contacts-block {
             justify-content: flex-end;
@@ -292,13 +296,13 @@
         &-main-container {
             flex-wrap: wrap;
             flex-direction: column;
-            height: 270px;
+            height: 250px;
             padding-bottom: 10px;
         }
         &-menu {
             column-count: auto;
-            margin-bottom: 10px;
-            min-height: 150px;
+            margin-bottom: 5px;
+            min-height: 145px;
         }
         &-menu-item {
             margin-bottom: 6px;
@@ -346,7 +350,7 @@
             margin-left: auto;
             border-bottom: 1px solid #fff;
             padding-bottom: 24px;
-            margin-bottom: 24px;
+            margin-bottom: 25px;
         }
         &-socials .socials-item {
             margin-right: 10px;

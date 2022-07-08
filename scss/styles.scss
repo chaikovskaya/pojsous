@@ -680,6 +680,7 @@ blockquote {
 		font-size: 14px;
 		line-height: 19px;
 		color: #202430;
+		border-radius: 8px;
 		&:hover {
 			color: #fff;
 			background-color: #2873B9;
@@ -714,6 +715,21 @@ blockquote {
 	}
 	&-item_disabled &-link:hover &-icon path {
 		fill: #C5C6C7;
+	}
+
+	@media screen
+	and (max-width: $tablet){
+		&-item_end {
+			display: none;
+		}
+		&-item {
+		}
+		&-link {
+			width: 35px;
+			height: 35px;
+			padding: 8px 5px;
+			font-size: 12px;
+		}
 	}
 }
 /* /pager */

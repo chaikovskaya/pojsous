@@ -81,12 +81,8 @@
     &-gallery-thumbs {
         position: relative;
         overflow: hidden;
-        .swiper-slide {
-            flex-flow: column nowrap;
-            width: 118px;
-            height: auto;
-            cursor: pointer;
-        }
+        flex-flow: column nowrap;
+        cursor: pointer;
     }
     &-gallery-main {
         position: relative;
@@ -108,9 +104,13 @@
         cursor: url(../images/products/popup/zoom-icon.png), pointer;
     }
     &-gallery-thumbs-list {
-        margin-top: 29px;
     }
-    &-thumbs-item {}
+    &-thumbs-item {
+        width: 118px;
+    }
+    &-thumbs-item.swiper-slide {
+        height: 118px;
+    }
     &-thumbs-item.swiper-slide-thumb-active {
         opacity: 0.6;
     }
@@ -132,6 +132,7 @@
 
     &-detail {
         flex-grow: 1;
+        max-width: 625px;
     }
     &-name {
         margin-bottom: 22px;
@@ -270,6 +271,14 @@
             display: block;
             font-size: 14px;
             line-height: 19px;
+        }
+        &-detail {
+            max-width: 100%;
+        }
+        &-gallery-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
     }
 

@@ -628,14 +628,14 @@ function initForm() {
     });
 }
 
-function initAjaxMoreProducts() {
+function initAjaxMore() {
     if (typeof(AjaxMore) === 'undefined' || !jQuery.isFunction(AjaxMore)) {
         return false;
     }
 
     var lastElement,
-        count = $('.JS-AjaxMore-Products').find('.JS-AjaxMore-Count').text() || 0,
-        countCommon = $('.JS-AjaxMore-Products').find('.JS-AjaxMore-Common').text()|| 0;
+        count = $('.JS-AjaxMore').find('.JS-AjaxMore-Count').text() || 0,
+        countCommon = $('.JS-AjaxMore').find('.JS-AjaxMore-Common').text()|| 0;
 
     var common = {
         beforeSend: function () {
@@ -653,16 +653,16 @@ function initAjaxMoreProducts() {
                 }
                 sliderCatalogProducts.slideTo(lastElement, 1000, false);
             }
-            var index = $('.JS-AjaxMore-Products').find('.JS-AjaxMore-Content li:last-child').data('index');
+            var index = $('.JS-AjaxMore').find('.JS-AjaxMore-Content li:last-child').data('index');
 
             if ((index + Number(count)) > countCommon) {
                 var newCount = countCommon - index;
-                $('.JS-AjaxMore-Products').find('.JS-AjaxMore-Count').text(newCount);
+                $('.JS-AjaxMore').find('.JS-AjaxMore-Count').text(newCount);
             }
         }
     };
 
-    $('.JS-AjaxMore-Products').each(function(){
+    $('.JS-AjaxMore').each(function(){
         var local = GLOBAL.parseData(jQuery(this).data('ajaxmore'));
         new AjaxMore(this, jQuery.extend({}, common, local));
     });
@@ -1296,7 +1296,7 @@ $(document).ready(function () {
     initSliderClients();
     initMobileMenu();
     initForm();
-    initAjaxMoreProducts();
+    initAjaxMore();
     initDropdownSearch();
     initPopupCallback();
     initPopupCalculate();

@@ -59,10 +59,28 @@
     }
     &-description {
         margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 19px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -ms-line-clamp: 5;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+        display: -webkit-box;
+        display: box;
+        word-wrap: break-word;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
     }
     &-button {
+        display: none;
         margin-top: auto;
         margin-right: auto;
+    }
+    &-link:hover &-button {
+        display: block;
     }
 
     @media screen
@@ -102,6 +120,7 @@
             width: 100%;
         }
         &-detail {
+            flex-grow: 1;
             width: 100%;
             padding: 20px;
         }
@@ -117,12 +136,48 @@
             font-size: 12px;
             line-height: 16px;
         }
+        &-description {
+            -ms-line-clamp: 2;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+        }
     }
 
     @media screen
     and (max-width: $mobile){
+        &-list {
+            margin-bottom: 30px;
+        }
         &-info {
             text-align: left;
         }
+        &-name {
+            min-height: auto;
+        }
+        &-description {
+            -ms-line-clamp: 6;
+            -webkit-line-clamp: 6;
+            line-clamp: 6;
+        }
+    }
+}
+
+
+.projects-detail {
+    &-title {
+        max-width: 950px;
+    }
+}
+
+
+.projects-similar {
+    &-list {
+        display: flex;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    &-list-item {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
