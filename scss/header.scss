@@ -455,6 +455,9 @@
         &-menu-panel_fix &-buttons {
             margin-left: auto;
         }
+        &-menu-panel_fix .search_active .search-input-wrapper {
+            width: 300px;
+        }
     }
 
     @media screen
@@ -468,6 +471,9 @@
         }
         &-buttons-item_calculate {
             display: none;
+        }
+        &-menu-panel_fix .search_active .search-input-wrapper {
+            width: 245px;
         }
     }
 }
@@ -1203,6 +1209,10 @@
     }
     @media screen
     and (max-width: $mobile){
+        .header-menu-panel_fix &-menu-switcher {
+            top: 5px;
+            right: 1px;
+        }
         &-block {
             top: 0;
             height: 100%;

@@ -978,7 +978,11 @@
                     </div>
 
                     <!-- Внизу ссылка на обратный звонок, кот. показывается в планшете -->
-                    <ul class="catalog-section-list row">
+                    <ul class="catalog-section-list row js-banner"
+                        data-class-middle="catalog-callback_middle"
+                        data-class-wide="catalog-callback_wide"
+                        data-class-hide="catalog-callback_hide"
+                    >
                         <li class="catalog-section-list-item col-md-4 col-lg-3">
                             <a class="product product_simple" href="#">
                                 <span class="product-pic">
@@ -1031,16 +1035,19 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="catalog-section-list-item catalog-section-list-item_callback col-md-8">
+                        <!-- Заглушка, чтобы не было пустого места -->
+                        <li class="catalog-section-list-item catalog-section-list-item_callback col js-banner-item">
                             <a class="catalog-callback js-popup-callback" href="javascript:;" data-src="./ajax/callback.html">
                                 <span class="catalog-callback-block">
                                     <span class="catalog-callback-name">Нужна помощь специалиста?</span>
                                     <span class="catalog-callback-info">закажите звонок и наш менеджер свяжется с Вами в ближайшее время!</span>
-                                    <span class="product-actions">
+                                    <span class="catalog-callback-actions">
                                         <span class="button">Перезвоните мне</span>
                                     </span>
                                 </span>
-                                <img class="catalog-callback-img" src="./images/catalog/callback-img-1.png" alt="" />
+                                <span class="catalog-callback-pic">
+                                    <img class="catalog-callback-img" src="./images/catalog/callback-img-1.png" alt="">
+                                </span>
                             </a>
                         </li>
                     </ul>
