@@ -141,6 +141,7 @@
         display: none;
         margin-bottom: 35px;
     }
+    &-pages {}
 
     @media screen
     and (max-width: $tablet){
@@ -158,6 +159,9 @@
         }
         &-slider-nav {
             display: block;
+        }
+        &-pages {
+            display: none;
         }
     }
     @media screen

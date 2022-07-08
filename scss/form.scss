@@ -301,7 +301,6 @@ label.form-error {
 }
 
 .button {
-    @include bgrcolor();
     position: relative;
     display: inline-block;
     height: 49px;
@@ -550,9 +549,6 @@ label.form-error {
 
     @media screen
     and (max-width: $tablet){
-        &-pages {
-            display: none;
-        }
     }
 }
 
