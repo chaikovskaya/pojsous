@@ -590,6 +590,59 @@ function reInitSliderTabs() {
     sliderTabs = undefined;
 }
 
+var sliderProjectsSimilar = undefined;
+function initSliderProjectsSimilar() {
+    jQuery('.js-slider-projects-similar').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderProjectsSimilar = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                    spaceBetween: 25,
+                },
+                720: {
+                    simulateTouch: false,
+                    spaceBetween: 15,
+                },
+                992: {
+                    simulateTouch: false,
+                    spaceBetween: 0,
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+function reInitSliderProjectsSimilar() {
+    if (sliderProjectsSimilar) {
+        sliderProjectsSimilar.destroy();
+    }
+    sliderProjectsSimilar = undefined;
+}
+
 function initMobileMenu() {
     if (typeof(MobileMenu) === 'undefined' || !jQuery.isFunction(MobileMenu)) {
         return false;
@@ -663,6 +716,34 @@ function initAjaxMore() {
     };
 
     $('.JS-AjaxMore').each(function(){
+        var local = GLOBAL.parseData(jQuery(this).data('ajaxmore'));
+        new AjaxMore(this, jQuery.extend({}, common, local));
+    });
+}
+
+function initAjaxMoreNews() {
+    if (typeof(AjaxMore) === 'undefined' || !jQuery.isFunction(AjaxMore)) {
+        return false;
+    }
+
+    var count = $('.JS-AjaxMore-News').find('.JS-AjaxMore-Count').text() || 0,
+        countCommon = $('.JS-AjaxMore-News').find('.JS-AjaxMore-Common').text()|| 0;
+
+    var common = {
+        beforeSend: function () {
+        },
+        success: function () {
+            var index = $('.JS-AjaxMore-News').find('.JS-AjaxMore-Content li:last-child').data('index');
+
+            if ((index + Number(count)) > countCommon) {
+                var newCount = countCommon - index;
+
+                $('.JS-AjaxMore-News').find('.JS-AjaxMore-Count').text(newCount);
+            }
+        }
+    };
+
+    $('.JS-AjaxMore-News').each(function(){
         var local = GLOBAL.parseData(jQuery(this).data('ajaxmore'));
         new AjaxMore(this, jQuery.extend({}, common, local));
     });
@@ -1219,6 +1300,28 @@ function initPopupGallery() {
     });
 }
 
+function initShare() {
+    $('.js-share').each(function () {
+        const btn = this,
+            thisUrl = btn.href,
+            thisTitle = document.title,
+            shareObj = {
+                title: thisTitle,
+                url: thisUrl,
+            };
+
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            try {
+                await navigator.share(shareObj)
+            } catch(err) {
+                console.log('Error: ' + err);
+            }
+        });
+    });
+}
+
 function initResizeWindow() {
     var width = $(window).outerWidth();
     if (width <= GLOBAL.mobile) {
@@ -1238,6 +1341,9 @@ function initResizeWindow() {
         if (sliderTabs == undefined) {
             initSliderTabs();
         }
+        if (sliderProjectsSimilar == undefined) {
+            initSliderProjectsSimilar();
+        }
     } else if (width <= GLOBAL.tablet) {
         GLOBAL.widthWindow = 'isTablet';
         if (sliderServices == undefined) {
@@ -1255,6 +1361,9 @@ function initResizeWindow() {
         if (sliderTabs == undefined) {
             initSliderTabs();
         }
+        if (sliderProjectsSimilar == undefined) {
+            initSliderProjectsSimilar();
+        }
     } else {
         GLOBAL.widthWindow = '';
         if (sliderServices != undefined) {
@@ -1271,6 +1380,9 @@ function initResizeWindow() {
         }
         if (sliderTabs != undefined) {
             reInitSliderTabs();
+        }
+        if (sliderProjectsSimilar != undefined) {
+            reInitSliderProjectsSimilar();
         }
     }
 }
@@ -1294,9 +1406,11 @@ $(document).ready(function () {
     initSliderServices();
     initSliderProjects();
     initSliderClients();
+    initSliderProjectsSimilar();
     initMobileMenu();
     initForm();
     initAjaxMore();
+    initAjaxMoreNews();
     initDropdownSearch();
     initPopupCallback();
     initPopupCalculate();
@@ -1316,4 +1430,5 @@ $(document).ready(function () {
     initHorizontalScroll();
     initBanner();
     initGalleryCard();
+    initShare();
 });

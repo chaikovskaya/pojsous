@@ -1,0 +1,188 @@
+
+.news-section {
+    &-list {}
+    &-list-item {
+        margin-bottom: 60px;
+    }
+    &-block {
+        position: relative;
+        top: 0;
+        display: flex;
+        overflow: hidden;
+        min-height: 352px;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 0px 10px 75px rgba(9, 36, 51, 0.15);
+        border-radius: 5px;
+        text-decoration: none;
+        transition: top 0.1s linear;
+        &:hover {
+            top: -10px;
+        }
+    }
+    &-img {
+        width: 48%;
+        min-width: 48%;
+        display: flex;
+        overflow: hidden;
+    }
+    &-pic {
+        height: 100%;
+        object-fit: cover;
+    }
+    &-detail {
+        width: 52%;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+    &-name {
+        display: block;
+        margin-bottom: 12px;
+        font-size: 18px;
+        line-height: 20px;
+        color: #202430;
+        text-decoration: none;
+        &:hover {
+            color: #202430;
+        }
+    }
+    &-date {
+        margin-bottom: 12px;
+        color: #C5C6C7;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+    }
+    &-description {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 19px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -ms-line-clamp: 5;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+        display: -webkit-box;
+        display: box;
+        word-wrap: break-word;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+    }
+    &-links {
+        visibility: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: auto;
+        margin-right: auto;
+    }
+    &-links-item {
+        margin-right: 11px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &-links-item_share {
+        display: none;
+    }
+    &-block:hover &-links {
+        visibility: visible;
+    }
+    &-button {}
+    &-button_share {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 49px;
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+    &-icon {
+    }
+    &-button:hover &-icon path {
+        fill: #fff;
+        stroke: transparent;
+    }
+
+    @media screen
+    and (max-width: $desktop) {
+    }
+
+    @media screen
+    and (max-width: $notebook) {
+    }
+
+    @media screen
+    and (max-width: $tablet){
+        &-list {
+            margin-bottom: 70px;
+        }
+        &-list-item {
+            margin-bottom: 50px;
+        }
+        &-block {
+            flex-direction: column;
+            min-height: auto;
+            &:hover {
+                top: 0;
+            }
+        }
+        &-img {
+            width: 100%;
+            min-width: 100%;
+            height: 200px;
+        }
+        &-pic {
+            width: 100%;
+        }
+        &-detail {
+            flex-grow: 1;
+            width: 100%;
+            padding: 20px;
+        }
+        &-name {
+            margin-bottom: 20px;
+            min-height: 38px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &-date {
+            margin-bottom: 20px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+        &-description {
+            -ms-line-clamp: 2;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+        }
+        &-links {
+            visibility: visible;
+        }
+        &-links-item_share {
+            display: block;
+        }
+        &-icon path {
+            fill: #fff;
+            stroke: transparent;
+        }
+    }
+
+    @media screen
+    and (max-width: $mobile){
+        &-list {
+            margin-bottom: 30px;
+        }
+        &-name {
+            min-height: auto;
+        }
+        &-description {
+            -ms-line-clamp: 6;
+            -webkit-line-clamp: 6;
+            line-clamp: 6;
+        }
+    }
+}

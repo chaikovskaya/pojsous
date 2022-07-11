@@ -722,8 +722,10 @@ blockquote {
 		&-item_end {
 			display: none;
 		}
-		&-item {
-		}
+	}
+
+	@media screen
+	and (max-width: $mobile){
 		&-link {
 			width: 35px;
 			height: 35px;

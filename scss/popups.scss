@@ -199,6 +199,27 @@
     padding-left: 0;
     padding-right: 0;
 }
+
+.fancybox-toolbar {
+    display: none;
+}
+.fancybox-infobar {
+    display: none;
+}
+
+@media screen
+and (max-width: $tablet) {
+    .fancybox-button--arrow_left {
+        margin-left: 10px;
+    }
+    .fancybox-button--arrow_right {
+        margin-right: 10px;
+    }
+}
+@media screen
+and (max-width: $mobile) {
+
+}
 /* /Fancybox */
 
 
