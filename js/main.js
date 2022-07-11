@@ -1009,7 +1009,7 @@ function initFix() {
         }
     };
 
-    $('.JS-Fix').not('.JS-Fix-ready').each(function(){
+    $('.JS-Fix').each(function(){
         var local = GLOBAL.parseData(jQuery(this).data('fix'));
         new Fix(this, jQuery.extend({}, common, local));
     });
@@ -1392,6 +1392,7 @@ $(document).ready(function () {
     $(window).resize(function(){
         initResizeWindow();
         initBanner();
+        initFix();
     });
 
     initDropdown();

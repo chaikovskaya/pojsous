@@ -49,13 +49,13 @@
   Fix.prototype._build = function _build() {
       let windowPosition = $(window).scrollTop();
 
-      if (windowPosition >= this.elementPosition ) {
-          if (!this.$item.hasClass(this.classActive)) {
-              this.$item.addClass(this.classActive);
+      if (windowPosition > this.elementPosition ) {
+          if (!this.$element.hasClass(this.classActive)) {
+              this.$element.addClass(this.classActive);
               this._update();
           }
       } else {
-          this.$item.removeClass(this.classActive);
+          this.$element.removeClass(this.classActive);
           this._update();
       }
   }

@@ -105,7 +105,7 @@
     &-develop {
         margin-left: auto;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         font-weight: 500;
         font-size: 12px;
         line-height: 16px;
@@ -117,6 +117,9 @@
     &-develop-logo {
         width: 145px;
         height: 26px;
+    }
+    &-develop-label {
+        padding-bottom: 3px;
     }
     &-company {
         color: #fff;
@@ -374,6 +377,9 @@
         &-develop {
             margin-left: 0;
             text-align: center;
+        }
+        &-develop-label {
+            padding-bottom: 4px;
         }
     }
 }

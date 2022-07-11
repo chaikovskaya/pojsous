@@ -2030,7 +2030,6 @@ label.form-error {
     width: 140px; } }
 
 .header {
-  box-shadow: 0px 5px 50px rgba(9, 36, 51, 0.08);
   margin-bottom: 45px; }
   .main-page .header {
     margin-bottom: 0; }
@@ -2076,7 +2075,8 @@ label.form-error {
   .header-contacts-icon {
     margin-right: 8px; }
   .header-menu {
-    height: 130px; }
+    height: 130px;
+    box-shadow: 0px 5px 50px rgba(9, 36, 51, 0.08); }
   .header-menu-panel {
     padding-top: 28px;
     padding-bottom: 30px; }
@@ -2124,6 +2124,8 @@ label.form-error {
     margin-right: 8px; }
     .header-phones-icon path {
       fill: #D40A0A; }
+  .header-menu-panel_fix {
+    box-shadow: none; }
   .header-menu-panel_fix .header-buttons {
     margin-left: 30px; }
   .header-menu-panel_fix .search_active .search-input-wrapper {
@@ -2162,7 +2164,7 @@ label.form-error {
       width: 13px;
       margin-right: 5px; } }
   @media screen and (min-width: 992px) {
-    .header-menu-panel_fix {
+    .header-menu-panel_fix .header-menu-panel {
       position: fixed;
       z-index: 900;
       top: 0;
@@ -2803,6 +2805,7 @@ label.form-error {
   position: relative; }
 
 .mob-search-input {
+  visibility: hidden;
   width: 100%;
   height: 46px;
   background-color: #ECEDF0;
@@ -2868,6 +2871,9 @@ label.form-error {
 
 .mob-search-list-icon {
   margin-right: 15px; }
+
+.mob-block.open .mob-search-input {
+  visibility: visible; }
 
 @media screen and (max-width: 992px) {
   .header-menu-panel_fix .mob-menu-switcher {
@@ -3105,7 +3111,7 @@ body.mob-menu-show {
   .footer-develop {
     margin-left: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
@@ -3115,6 +3121,8 @@ body.mob-menu-show {
   .footer-develop-logo {
     width: 145px;
     height: 26px; }
+  .footer-develop-label {
+    padding-bottom: 3px; }
   .footer-company {
     color: #fff;
     font-weight: 300;
@@ -3292,7 +3300,9 @@ body.mob-menu-show {
       margin-bottom: 11px; }
     .footer-develop {
       margin-left: 0;
-      text-align: center; } }
+      text-align: center; }
+    .footer-develop-label {
+      padding-bottom: 4px; } }
 
 .main-banner {
   margin-bottom: 120px; }
@@ -3358,7 +3368,7 @@ body.mob-menu-show {
     left: 100%;
     width: 325px;
     height: 100%;
-    background: url("../images/main-banner/main-banner-decor-3.png") repeat-y left top; }
+    background: linear-gradient(to right, rgba(95, 84, 74, 0) 30%, #5f544a 100%); }
     .main-banner-decor-3:after {
       content: '';
       position: absolute;
@@ -3367,7 +3377,7 @@ body.mob-menu-show {
       width: 100vw;
       max-width: none;
       height: 100%;
-      background-color: #000; }
+      background-color: #5f544a; }
   .main-banner-detail {
     position: absolute;
     top: 160px;
@@ -5016,6 +5026,9 @@ body.mob-menu-show {
   display: flex;
   margin-bottom: 120px; }
 
+.card-container_simple {
+  margin-bottom: 0; }
+
 .card-gallery {
   width: 546px;
   padding-right: 30px; }
@@ -5167,6 +5180,8 @@ body.mob-menu-show {
 @media screen and (max-width: 720px) {
   .card-container {
     margin-bottom: 90px; }
+  .card-container_simple {
+    margin-bottom: 0; }
   .card-panel {
     margin-bottom: 18px; }
   .card-gallery-main {
@@ -5610,3 +5625,47 @@ body.mob-menu-show {
     -ms-line-clamp: 6;
     -webkit-line-clamp: 6;
     line-clamp: 6; } }
+
+.news-detail-links-item {
+  margin-right: 27px; }
+  .news-detail-links-item:last-child {
+    margin-right: 0; }
+
+.news-detail-links-item_share {
+  display: none; }
+
+.news-detail-links {
+  display: flex;
+  flex-wrap: wrap; }
+
+.news-detail-share {
+  min-width: 49px;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.news-detail-share:hover .news-detail-icon path {
+  fill: #fff;
+  stroke: transparent; }
+
+.news-detail-title {
+  max-width: 950px; }
+
+.news-detail-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
+@media screen and (max-width: 992px) {
+  .news-detail-title {
+    max-width: 450px; }
+  .news-detail-links {
+    justify-content: center; }
+  .news-detail-links-item_share {
+    display: block; }
+  .news-detail-icon path {
+    fill: #fff;
+    stroke: transparent; } }
+
+@media screen and (max-width: 720px) {
+  .news-detail-links {
+    justify-content: left; } }
