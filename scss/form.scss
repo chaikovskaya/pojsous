@@ -334,7 +334,7 @@ label.form-error {
         background-color: #ECEDF0;
         color: #202430;
         &:hover {
-            background-color: #2873B9;
+            background: #2873B9;
         }
         &:active {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #2873B9;
@@ -346,7 +346,7 @@ label.form-error {
         background-color: transparent;
         border: 1px solid #FFFFFF;
         &:hover {
-            background-color: #D50A0A;
+            background: #D50A0A;
             border-color: #D50A0A;
         }
     }
@@ -355,10 +355,10 @@ label.form-error {
         background-color: #ECEDF0;
         color: #202430;
         &:hover {
-            background-color: #D50A0A;
+            background: #D50A0A;
         }
         &:active {
-            background-color: #D50A0A;
+            background: #D50A0A;
         }
     }
 
@@ -366,7 +366,7 @@ label.form-error {
         background-color: #ECEDF0;
         color: #202430;
         &:hover {
-            background-color: #2873B9;
+            background: #2873B9;
         }
         &:active {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #2873B9;

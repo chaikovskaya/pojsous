@@ -8,12 +8,16 @@
         position: relative;
     }
     &-item {
-        overflow: hidden;
+    }
+    &-item.swiper-slide-active {
+        position: relative;
+        z-index: 2;
     }
     &-container {
         position: relative;
         display: flex;
         justify-content: center;
+        align-items: center;
         height: 619px;
     }
     &-pic {
@@ -73,6 +77,7 @@
         left: 100%;
         width: 325px;
         height: 100%;
+        margin-left: -290px;
         background: linear-gradient(to right, rgba(95, 84, 74, 0) 30%, #5f544a 100%);
         &:after {
             content: '';
@@ -87,7 +92,8 @@
     }
     &-detail {
         position: absolute;
-        top: 160px;
+        top: auto;
+        bottom: auto;
         left: 30px;
         z-index: 1;
         max-width: 500px;
@@ -218,9 +224,6 @@
             font-size: 22px;
             line-height: 24px;
         }
-        &-detail {
-            top: 148px;
-        }
         &-description {
             margin-bottom: 20px;
             padding-left: 17px;
@@ -240,6 +243,7 @@
             left: auto;
             right: -30px;
             width: 144px;
+            margin-left: 0;
             background-image: url("../images/main-banner/main-banner-decor-3-tablet.png")
         }
         &-pagination {
@@ -253,7 +257,6 @@
             height: 500px;
         }
         &-detail {
-            top: 83px;
             left: 20px;
             padding-right: 20px;
         }
@@ -523,23 +526,22 @@
 
 
 .services {
-    margin-bottom: 195px;
+    margin-bottom: 105px;
     &-list {
         display: flex;
         justify-content: center;
-        margin-bottom: 130px;
+        flex-wrap: wrap;
     }
     &-list-item {
         width: auto;
         padding-left: 15px;
         padding-right: 15px;
-    }
-    &-list-item:nth-child(3) ~ &-list-item {
-        display: none;
+        margin-bottom: 90px;
     }
     &-list-item:hover {
     }
     &-list-item_more {
+        display: none;
     }
     &-pagination {
         display: inline-block;
@@ -569,6 +571,9 @@
             margin-bottom: -84px;
             padding-bottom: 84px;
         }
+    }
+    &-link_simple {
+        position: relative;
     }
     &-img {
         display: block;
@@ -643,6 +648,25 @@
         height: 32px;
     }
     &-more-button {}
+    &-actions {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+    &-link_simple:hover &-actions {
+        visibility: visible;
+    }
+    &-link_simple:hover {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 
     @media screen
     and (max-width: $tablet){
@@ -650,22 +674,24 @@
         &-list {
             margin-bottom: 40px;
             justify-content: normal;
+            flex-wrap: nowrap;
         }
         &-list-item {
             width: auto;
             min-height: 100%;
             height: auto;
+            margin-bottom: 0;
             padding-left: 0;
             padding-right: 0;
         }
         &-list-item_more {
             display: block;
         }
-        &-list-item:nth-child(3) ~ &-list-item {
-            display: block;
-        }
         &-link {
             width: 210px;
+            &:hover {
+                top: 0;
+            }
         }
         &-link:hover {
             margin-top: 0;
@@ -679,7 +705,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            max-width: 162px;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 19px;
@@ -722,6 +747,16 @@
         &-slider-nav {
             display: flex;
         }
+        &-actions {
+            margin-top: auto;
+            visibility: visible;
+            position: static;
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: transparent;
+            text-align: center;
+        }
     }
     @media screen
     and (max-width: $mobile){
@@ -745,6 +780,7 @@
     }
     &-pic {
         display: block;
+        width: 100%;
     }
     &-detail {
         width: 49%;
@@ -1103,6 +1139,10 @@
         width: 298px;
     }
 
+    &_modified {
+        margin-bottom: 0;
+    }
+
     @media screen
     and (max-width: $tablet){
         margin-bottom: 120px;
@@ -1121,6 +1161,9 @@
             display: block;
         }
         &-link {
+            width: 323px;
+        }
+        &_simple &-link {
             width: 323px;
         }
         &-link:hover {
@@ -1166,10 +1209,16 @@
                 fill: #fff;
             }
         }
+        &_modified {
+            margin-bottom: 0;
+        }
     }
     @media screen
     and (max-width: $mobile){
         &-link {
+            width: 245px;
+        }
+        &_simple &-link {
             width: 245px;
         }
         &-info {

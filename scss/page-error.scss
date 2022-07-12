@@ -1,0 +1,56 @@
+
+.page-error {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    &-icon {
+        display: inline-block;
+        width: 205px;
+        height: 151px;
+        margin-bottom: 10px;
+        background: url("../images/page-error/page-error-img.png") no-repeat 0 0;
+    }
+    &-info {
+        margin-bottom: 45px;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+    }
+    &-title {
+        margin-top: 67px;
+    }
+
+    @media screen
+    and (max-width: $desktop) {
+    }
+
+    @media screen
+    and (max-width: $tablet){
+        &-title {
+            margin-top: 53px;
+            margin-bottom: 10px;
+            font-size: 22px;
+            line-height: 24px;
+        }
+        &-icon {
+            margin-bottom: 13px;
+        }
+        &-info {
+            margin-bottom: 18px;
+            text-transform: none;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+
+    @media screen
+    and (max-width: $mobile){
+        &-title {
+            margin-top: 56px;
+            margin-bottom: 14px;
+        }
+    }
+}

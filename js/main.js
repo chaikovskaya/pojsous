@@ -721,29 +721,30 @@ function initAjaxMore() {
     });
 }
 
-function initAjaxMoreNews() {
+function initAjaxMoreSimple() {
     if (typeof(AjaxMore) === 'undefined' || !jQuery.isFunction(AjaxMore)) {
         return false;
     }
 
-    var count = $('.JS-AjaxMore-News').find('.JS-AjaxMore-Count').text() || 0,
-        countCommon = $('.JS-AjaxMore-News').find('.JS-AjaxMore-Common').text()|| 0;
+    var $elem = $('.JS-AjaxMore-Simple'),
+        count = $elem.find('.JS-AjaxMore-Count').text() || 0,
+        countCommon = $elem.find('.JS-AjaxMore-Common').text()|| 0;
 
     var common = {
         beforeSend: function () {
         },
         success: function () {
-            var index = $('.JS-AjaxMore-News').find('.JS-AjaxMore-Content li:last-child').data('index');
+            var index = $elem.find('.JS-AjaxMore-Content li:last-child').data('index');
 
             if ((index + Number(count)) > countCommon) {
                 var newCount = countCommon - index;
 
-                $('.JS-AjaxMore-News').find('.JS-AjaxMore-Count').text(newCount);
+                $elem.find('.JS-AjaxMore-Count').text(newCount);
             }
         }
     };
 
-    $('.JS-AjaxMore-News').each(function(){
+    $elem.each(function(){
         var local = GLOBAL.parseData(jQuery(this).data('ajaxmore'));
         new AjaxMore(this, jQuery.extend({}, common, local));
     });
@@ -1411,7 +1412,7 @@ $(document).ready(function () {
     initMobileMenu();
     initForm();
     initAjaxMore();
-    initAjaxMoreNews();
+    initAjaxMoreSimple();
     initDropdownSearch();
     initPopupCallback();
     initPopupCalculate();

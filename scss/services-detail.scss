@@ -1,0 +1,126 @@
+
+.services-detail {
+    &-banner {
+        margin-bottom: 116px;
+    }
+
+    &-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 120px;
+        min-height: 260px;
+    }
+    &-info-img {
+        width: 42.7%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-right: 30px;
+    }
+    &-info-pic {
+        width: 100%;
+        display: block;
+    }
+    &-info-block {
+        width: 57.3%;
+        max-width: 625px;
+        margin-left: 42.7%;
+    }
+    &-info-content {
+        margin-bottom: 30px;
+    }
+    &-info-title {
+        width: 57.3%;
+        margin-bottom: 30px;
+        text-transform: none;
+        text-align: left;
+        margin-left: 42.7%;
+    }
+    &-info-button {}
+
+    @media screen
+    and (max-width: $desktop) {
+    }
+
+    @media screen
+    and (max-width: $notebook) {
+    }
+
+    @media screen
+    and (max-width: $tablet){
+        &-banner {
+            margin-bottom: 90px;
+        }
+
+        &-info-title {
+            margin-left: 51%;
+        }
+        &-info {
+            margin-bottom: 100px;
+        }
+        &-info-img {
+            width: 51%;
+            padding-right: 15px;
+            height: 100%;
+        }
+        &-info-pic {
+            object-fit: cover;
+            height: 100%;
+        }
+        &-info-block {
+            width: 49%;
+            margin-left: 51%;
+        }
+        &-info-button {
+            background: #2873B9;
+            color: #fff;
+            &:hover {
+                background: #2873B9;
+            }
+        }
+    }
+
+    @media screen
+    and (min-width: $mobile) and (max-width: $tablet){
+        &-info-title {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            font-size: 14px;
+            line-height: 19px;
+            border-left: 3px solid #2873B9;
+        }
+    }
+
+    @media screen
+    and (max-width: $mobile){
+        &-banner {
+            margin-bottom: 50px;
+        }
+        &-info {
+            flex-direction: column;
+        }
+        &-info-img {
+            position: static;
+            width: auto;
+            margin-bottom: 30px;
+            padding-right: 0;
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        &-info-pic {
+            height: 320px;
+        }
+        &-info-block {
+            width: 100%;
+            margin-left: 0;
+        }
+        &-info-title {
+            order: -1;
+            width: 100%;
+            text-transform: uppercase;
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+}

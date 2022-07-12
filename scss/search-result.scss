@@ -1,0 +1,121 @@
+
+.search-result {
+    &-list {
+        margin-bottom: 73px;
+        max-width: 1060px;
+    }
+    &-item {
+        margin-bottom: 60px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &-link {
+        display: block;
+        text-decoration: none;
+    }
+    &-name {
+        display: block;
+        margin-bottom: 22px;
+        font-size: 18px;
+        line-height: 20px;
+        color: #202430;
+    }
+    &-detail {
+        display: block;
+    }
+    &-more {
+        display: none;
+    }
+
+    @media screen
+    and (max-width: $desktop) {
+    }
+
+    @media screen
+    and (min-width: $tablet){
+        &-link:hover &-name {
+            color: #E31E24;
+        }
+        &-link:hover &-detail {
+            color: #E31E24;
+        }
+    }
+
+    @media screen
+    and (max-width: $tablet){
+        &-list {
+            margin-bottom: 50px;
+        }
+        &-item {
+            margin-bottom: 35px;
+        }
+        &-more {
+            display: inline-block;
+        }
+        &-detail {
+            margin-bottom: 18px;
+        }
+        &-name {
+            margin-bottom: 18px;
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &-detail {
+            margin-bottom: 18px;
+        }
+    }
+
+    @media screen
+    and (max-width: $mobile){
+        &-list {
+            margin-bottom: 85px;
+        }
+    }
+}
+
+.search-empty {
+    max-width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    &-title {
+        margin-bottom: 22px;
+    }
+    &-info {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+    }
+    &-icon {
+        display: inline-block;
+        width: 195px;
+        height: 168px;
+        margin-bottom: 10px;
+        background: url("../images/search-result/search-result-img.png") no-repeat 0 0;
+    }
+    @media screen
+    and (max-width: $tablet){
+        &-title {
+            margin-bottom: 0;
+            font-size: 22px;
+            line-height: 24px;
+        }
+        &-icon {
+            margin-bottom: 14px;
+        }
+        &-info {
+            text-transform: none;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+    @media screen
+    and (max-width: $mobile){
+        &-icon {
+            margin-bottom: 18px;
+        }
+    }
+}
