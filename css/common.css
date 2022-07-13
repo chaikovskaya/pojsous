@@ -145,7 +145,7 @@ ol {
   margin-bottom: 20px; }
 
 b {
-  font-weight: 700; }
+  font-weight: 500; }
 
 *::before, *::after {
   max-width: 100%; }
@@ -5944,3 +5944,61 @@ body.mob-menu-show {
     .page-error-title {
       margin-top: 56px;
       margin-bottom: 14px; } }
+
+.contacts-item {
+  display: flex; }
+
+.contacts-map {
+  width: 50%;
+  padding-right: 75px; }
+
+.contacts-content {
+  width: 50%; }
+
+.contacts-office {
+  margin-bottom: 30px; }
+
+.contacts-list-item {
+  margin-bottom: 30px; }
+
+.contacts-block {
+  margin-bottom: 9px; }
+  .contacts-block:last-child {
+    margin-bottom: 0; }
+
+.contacts-data {
+  display: flex; }
+
+.contacts-icon {
+  margin-right: 7px;
+  margin-top: 3px; }
+
+.contacts-info {
+  color: #202430;
+  font-weight: 300;
+  line-height: 22px; }
+  .contacts-info a {
+    text-decoration: none; }
+
+.contacts-name {
+  margin-bottom: 9px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #202430; }
+
+.contacts-button {
+  height: 35px;
+  padding: 8px 17px; }
+
+.contacts-container {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(197, 198, 198, 0.5); }
+  .contacts-container:last-child {
+    border-bottom-width: 0;
+    padding-bottom: 0;
+    margin-bottom: 0; }
+
+.contacts-map-block {
+  width: 100%;
+  height: 100%; }

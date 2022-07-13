@@ -1433,4 +1433,5 @@ $(document).ready(function () {
     initBanner();
     initGalleryCard();
     initShare();
+    ymaps.ready(initMap);
 });
