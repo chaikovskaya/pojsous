@@ -1351,6 +1351,7 @@ function initPopupGallery() {
         smallBtn : true,
         arrows : false,
         animationEffect: "fade",
+        hash : false,
         btnTpl: {
             smallBtn:
                 '<button type="button" data-fancybox-close class="fancybox-close" title="{{CLOSE}}">' +
