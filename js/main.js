@@ -643,6 +643,100 @@ function reInitSliderProjectsSimilar() {
     sliderProjectsSimilar = undefined;
 }
 
+var sliderCompany;
+function initSliderCompany() {
+    jQuery('.js-slider-company').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderCompany = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            spaceBetween: 0,
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                },
+                720: {
+                    simulateTouch: false,
+                },
+                992: {
+                    simulateTouch: false,
+                },
+                1340: {
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+
+var sliderCertificate;
+function initSliderCertificate() {
+    jQuery('.js-slider-certificate').each(function() {
+        var $slider = $(this),
+            sliderLength = $slider.find('.swiper-slide').length;
+
+        var isStart = sliderLength > 1 ? true : false;
+
+        sliderCertificate = new Swiper($slider[0], {
+            loop: false,
+            pagination: {
+                el: ".js-slider-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: $slider.find('.js-slider-next')[0],
+                prevEl: $slider.find('.js-slider-prev')[0],
+                disabledClass: "slider-button_disabled",
+            },
+            spaceBetween: 0,
+            slidesPerView: "auto",
+            breakpoints: {
+                0: {
+                    simulateTouch: false,
+                },
+                720: {
+                    simulateTouch: false,
+                },
+                992: {
+                    simulateTouch: false,
+                },
+                1340: {
+                },
+            },
+            on: {
+                beforeInit: function () {
+                },
+                init: function () {
+                },
+                slideChangeTransitionEnd: function () {
+                },
+            },
+        });
+    });
+}
+
 function initMobileMenu() {
     if (typeof(MobileMenu) === 'undefined' || !jQuery.isFunction(MobileMenu)) {
         return false;
@@ -1409,6 +1503,8 @@ $(document).ready(function () {
     initSliderProjects();
     initSliderClients();
     initSliderProjectsSimilar();
+    initSliderCompany();
+    initSliderCertificate();
     initMobileMenu();
     initForm();
     initAjaxMore();

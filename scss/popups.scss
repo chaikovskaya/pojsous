@@ -408,6 +408,10 @@ and (max-width: $mobile) {
     }
 }
 
+.map-popup {
+    max-width: 240px;
+}
+
 
 @media screen
 and (max-width: $tablet){
@@ -438,9 +442,6 @@ and (max-width: $mobile){
         top: -44px;
         left: auto;
         right: 0;
-    }
-    .map-popup {
-        max-width: 190px;
     }
 }
 

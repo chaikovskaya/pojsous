@@ -8,7 +8,7 @@ function initMap() {
             iconUrl = element.data('map-icon') || '',
             iconSize = element.data('icon-size') || [0,0],
             iconOffset = element.data('icon-offset') || [0,0],
-            zoom = element.data('map-zoom') || 10;
+            zoom = element.data('map-zoom') || 15;
             classActive = element.data('class-active') || 'active';
 
         var myMap = new ymaps.Map(idMap, {
@@ -31,15 +31,17 @@ function initMap() {
                 objectText =  $(this).find('.js-map-item-value').html() || "",
                 objectHref =  '';
 
+            console.log(objectText);
+
             var elementsObjects =
                 {
                     "type": "Feature",
                     "id": objectId,
-                    "options": {
-                        //iconLayout: 'default#image',
-                        //iconImageHref: iconUrl,
-                        //iconImageSize: iconSize,
-                        //ImageOffset: iconOffset,
+                        "options": {
+                        iconLayout: 'default#image',
+                        iconImageHref: iconUrl,
+                        iconImageSize: iconSize,
+                        ImageOffset: iconOffset,
                         //"preset": "islands#blueIcon",
                     },
                     "geometry":{
@@ -53,7 +55,7 @@ function initMap() {
                             '</div>' +
                             '</div>',
                     }
-                };
+                 };
 
             masObjects.push(elementsObjects);
         });

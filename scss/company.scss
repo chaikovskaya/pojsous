@@ -1,0 +1,356 @@
+
+.company {
+    &-info {
+        max-width: 844px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 35px;
+        text-align: center;
+    }
+    &-advantages {
+        margin-bottom: 90px;
+    }
+    &-advantages-item {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &-advantages-name {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        color: #202430;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        text-transform: uppercase;
+    }
+    &-advantages-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 209px;
+        height: 180px;
+        margin-left: auto;
+        margin-right: auto;
+        background: url("../images/company/icon-bgr-1.png") no-repeat 10px 0;
+        background-size: 100% auto;
+    }
+    &-advantages-item:nth-child(1) &-advantages-name {
+        max-width: 120px;
+    }
+    &-advantages-item:nth-child(2) &-advantages-icon {
+        background-image: url("../images/company/icon-bgr-2.png");
+        background-size: auto;
+        background-position: right 5px;
+    }
+    &-advantages-item:nth-child(2) &-advantages-img {
+        margin-left: 2px;
+    }
+    &-advantages-item:nth-child(2) &-advantages-name {
+        max-width: 130px;
+    }
+    &-advantages-item:nth-child(3) &-advantages-icon {
+        background-image: url("../images/company/icon-bgr-3.png");
+        background-position: -20px 5px;
+    }
+    &-advantages-item:nth-child(3) &-advantages-img {
+        margin-left: 6px;
+    }
+    &-advantages-item:nth-child(4) &-advantages-icon {
+        background-image: url("../images/company/icon-bgr-4.png");
+        background-position: -15px 25px;
+    }
+    &-advantages-item:nth-child(5) &-advantages-icon {
+        background-image: url("../images/company/icon-bgr-5.png");
+        background-position: right 10px;
+        background-size: auto;
+    }
+    &-advantages-pic {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 101px;
+        height: 101px;
+        border-radius: 100%;
+        background-color: #202430;
+        box-shadow: 0px 4px 25px #FFFFFF;
+    }
+    &-advantages-img {
+    }
+    &-gallery {
+        margin-bottom: 120px;
+    }
+    &-gallery-content {
+        text-align: center;
+        max-width: 1062px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &-gallery-tabs-menu {
+        justify-content: center;
+    }
+    &-gallery-container {
+        margin-bottom: 60px;
+    }
+    &-gallery-block {
+        overflow: hidden;
+        position: relative;
+        margin-left: -80px;
+        margin-right: -80px;
+    }
+    &-gallery-list {
+    }
+    &-gallery-list-item {
+        width: 100%;
+    }
+    &-gallery-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    &-gallery-link {
+        display: block;
+        height: 100%;
+    }
+    &-gallery-link_video {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+    &-gallery-video-icon {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-gallery-pagination {
+    }
+    &-gallery-button {
+    }
+
+    &-certificate {
+        margin-bottom: 107px;
+    }
+    &-certificate-container {
+        padding-top: 20px;
+    }
+    &-certificate-list {
+        margin-bottom: 42px;
+    }
+    &-certificate-list-item {
+        width: 298px;
+        margin-right: 30px;
+    }
+    &-certificate-link {
+        display: block;
+        position: relative;
+        top: 0;
+        transition: top 0.1s linear;
+        &:hover {
+            top: -10px;
+            box-shadow: 0 10px 50px rgba(9, 36, 51, 0.17);
+        }
+        &:hover:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 23px;
+            height: 23px;
+            background: url("../images/company/icons/zoom.png") no-repeat 0 0;
+        }
+    }
+    &-certificate-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen
+    and (max-width: $desktop) {
+        &-gallery-block {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    @media screen
+    and (min-width: $tablet) {
+        &-gallery-button {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: 1;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.2);
+            &:hover {
+                background-color: #2873B9;
+            }
+            &:active {
+                background-color: #2873B9;
+            }
+        }
+        &-gallery-button_left {
+            left: 22px;
+        }
+        &-gallery-button_right {
+            left: auto;
+            right: 22px;
+        }
+        &-gallery-slider-nav {
+            width: 100%;
+        }
+        &-gallery-pagination {
+            position: absolute;
+            bottom: 21px!important;
+            left: auto!important;
+            z-index: 1;
+            .swiper-pagination-bullet {
+                background-color: #fff;
+                margin-right: 3px !important;
+                margin-left: 3px !important;
+            }
+        }
+        &-gallery-icon {
+            path {
+                fill: #C5C6C7;
+            }
+        }
+        &-gallery-button:hover &-gallery-icon {
+            path {
+                fill: #C5C6C7;
+            }
+        }
+    }
+
+    @media screen
+    and (max-width: $tablet){
+        &-info {
+            margin-bottom: 75px;
+        }
+        &-advantages-item {
+            margin-bottom: 21px;
+        }
+        &-advantages-icon {
+            width: 150px;
+            height: 120px;
+            background-position: 0 0;
+        }
+        &-advantages-pic {
+            width: 77px;
+            height: 77px;
+        }
+        &-advantages-name {
+            margin-top: -10px;
+            font-size: 12px;
+            line-height: 16px;
+            text-transform: none;
+        }
+        &-advantages-img {
+            height: 35px;
+            max-width: 50px;
+        }
+        &-advantages-item:nth-child(1) &-advantages-name {
+            max-width: none;
+        }
+        &-advantages-item:nth-child(2) &-advantages-icon {
+            background-size: 100% 100%;
+        }
+        &-advantages-item:nth-child(2) &-advantages-name {
+            max-width: none;
+        }
+        &-advantages-item:nth-child(3) &-advantages-icon {
+            background-position: -5px 5px;
+        }
+        &-advantages-item:nth-child(4) &-advantages-icon {
+            background-position: -10px 13px;
+        }
+        &-advantages-item:nth-child(5) &-advantages-icon {
+            background-position: right 3px;
+            background-size: auto 100%;
+        }
+
+        &-gallery {
+            margin-bottom: 90px;
+        }
+        &-gallery-container {
+            margin-bottom: 50px;
+        }
+        &-gallery-block {
+            overflow: visible;
+        }
+        &-gallery-list-item {
+            width: 262px;
+            height: 217px;
+            margin-right: 18px;
+        }
+        &-gallery-button {
+            position: static;
+        }
+        &-gallery-tabs-menu {
+            justify-content: left;
+        }
+        &-gallery-list {
+            margin-bottom: 56px;
+        }
+        &-gallery-video-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        &-certificate {
+            margin-bottom: 90px;
+        }
+        &-certificate-container {
+            padding-top: 0;
+        }
+        &-certificate-list {
+            margin-bottom: 18px;
+        }
+        &-certificate-list-item {
+            width: 262px;
+            margin-right: 18px;
+        }
+        &-certificate-link {
+            box-shadow: 0 10px 50px rgba(9, 36, 51, 0.17);
+            &:hover {
+                top: 0;
+            }
+        }
+    }
+
+    @media screen
+    and (max-width: $mobile){
+        &-info {
+            margin-bottom: 36px;
+            text-align: left;
+        }
+        &-advantages {
+            margin-bottom: 76px;
+        }
+        &-advantages-item {
+            margin-bottom: 9px;
+        }
+        &-advantages-item:nth-child(2) &-advantages-icon {
+            background-size: auto 100%;
+        }
+        &-gallery-container {
+            margin-bottom: 34px;
+        }
+        &-gallery-list {
+            margin-bottom: 19px;
+        }
+        &-gallery-content {
+            text-align: left;
+        }
+    }
+}
