@@ -363,6 +363,7 @@
     }
     &-info {
         display: block;
+        flex-grow: 1;
         padding: 20px 30px 30px;
     }
     &-name {
@@ -688,6 +689,8 @@
             display: block;
         }
         &-link {
+            display: flex;
+            flex-direction: column;
             width: 210px;
             &:hover {
                 top: 0;
@@ -699,6 +702,9 @@
             padding-bottom: 0;
         }
         &-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
             padding: 14px 20px 25px;
         }
         &-name {
@@ -713,6 +719,7 @@
             text-align: center;
         }
         &-box {
+            margin-top: auto;
             position: static;
             display: block;
             text-align: center;
@@ -855,24 +862,6 @@
 .feedback {
     position: relative;
     margin-bottom: 100px;
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 100%;
-        width: 100vw;
-        height: 100%;
-        background-color: #211D50;
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 100%;
-        width: 100vw;
-        height: 100%;
-        background-color: #542121;
-    }
     &-container {
         position: relative;
         z-index: 1;
@@ -909,6 +898,24 @@
         max-width: none;
         max-height: none;
         background: url("../images/feedback/feedback-img-1.png") no-repeat 0 0;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 99.9%;
+            width: 100vw;
+            height: 100%;
+            background-color: #211D50;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100vw;
+            height: 100%;
+            background-color: #542121;
+        }
     }
     &-block {
         position: relative;
@@ -934,12 +941,6 @@
     }
     &_questions {
         margin-bottom: 119px;
-        &:before {
-            background-color: #51527A;
-        }
-        &:after {
-            background-color: #965A5A;
-        }
     }
     &_questions &-container {
         min-height: 411px;
@@ -957,6 +958,12 @@
     &_questions &-decor {
         width: 1440px;
         background-image: url("../images/feedback/feedback-img-2.png");
+        &:before {
+            background-color: #51527A;
+        }
+        &:after {
+            background-color: #965A5A;
+        }
     }
 
     @media screen
@@ -995,7 +1002,7 @@
             margin-left: 38%;
         }
         &_questions &-decor {
-            transform: translateX(-28%);
+            transform: translateX(-29%);
             background-size: auto auto;
             background-position: 0 -46px;
         }
@@ -1074,6 +1081,9 @@
         font-size: 18px;
         line-height: 20px;
         color: #202430;
+    }
+    &-list-item_more &-name {
+        max-width: 198px;
     }
     &-box {
         display: none;
@@ -1162,9 +1172,17 @@
         }
         &-link {
             width: 323px;
+            display: flex;
+            flex-direction: column;
+            &:hover {
+                top: 0;
+            }
         }
         &_simple &-link {
             width: 323px;
+        }
+        &-link_more {
+            width: 245px;
         }
         &-link:hover {
             margin-top: 0;
@@ -1176,6 +1194,9 @@
             object-fit: cover;
         }
         &-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
             padding: 20px;
         }
         &-name {
@@ -1188,9 +1209,13 @@
             font-size: 14px;
             line-height: 19px;
         }
+        &-list-item_more &-name {
+            max-width: 155px;
+        }
         &-box {
             position: static;
             display: block;
+            margin-top: auto;
             padding-left: 0;
             padding-right: 0;
         }

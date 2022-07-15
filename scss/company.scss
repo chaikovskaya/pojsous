@@ -269,7 +269,8 @@
             max-width: none;
         }
         &-advantages-item:nth-child(3) &-advantages-icon {
-            background-position: -5px 5px;
+            background-position: -5px 2px;
+            background-size: 93% auto;
         }
         &-advantages-item:nth-child(4) &-advantages-icon {
             background-position: -10px 13px;

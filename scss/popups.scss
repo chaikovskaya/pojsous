@@ -526,6 +526,7 @@ and (max-width: $mobile){
     z-index: 1;
     width: 100%;
     padding-top: 49px;
+    padding-bottom: 10px;
     background-color: #fff;
     box-shadow: 0px 10px 50px rgba(9, 36, 51, 0.15);
     border-radius: 8px 8px;
@@ -564,6 +565,14 @@ and (max-width: $mobile){
             padding: 11px 17px;
             font-size: 13px;
             line-height: 17px;
+        }
+    }
+    @media screen
+    and (max-width: $mobile){
+        &-link {
+            padding: 6px 16px;
+            font-size: 12px;
+            line-height: 15px;
         }
     }
 }

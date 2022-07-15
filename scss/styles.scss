@@ -744,7 +744,6 @@ blockquote {
 /* /icons */
 
 .button-up {
-	display: none;
 	visibility: hidden;
 	position: fixed;
 	z-index: 100;
@@ -760,6 +759,9 @@ blockquote {
 	transition: visibility 0.3s linear, background-color 0.3s ease-in-out;
 	&:hover {
 		background-color: rgba(213, 10, 10, 1);
+	}
+	&:active {
+		background-color: #B6181D;
 	}
 	&_active {
 		visibility: visible;

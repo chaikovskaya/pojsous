@@ -1334,7 +1334,7 @@ function initGalleryCard() {
         slidesPerView: "auto",
         breakpoints: {
             0: {
-                spaceBetween: 18,
+                spaceBetween: 20,
             },
             720: {
                 spaceBetween: 15,
@@ -1360,7 +1360,7 @@ function initPopupGallery() {
                 '</svg>' +
                 '</button>'
         },
-        'height'		: 742,
+        //'height'		: 742,
         thumbs : {
             autoStart   : true,
             hideOnClose : true,
@@ -1369,7 +1369,7 @@ function initPopupGallery() {
         },
         beforeClose: function (instance) {
         },
-        afterLoad: function(instance, current) {
+        afterShow: function(instance, current) {
             if ( instance.group.length > 1 && current.$content ) {
                 current.$content.append('' +
                     '<div class="fancybox-nav-block">' +
