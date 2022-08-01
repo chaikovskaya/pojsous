@@ -1143,6 +1143,8 @@
         height: 32px;
     }
     &-more-button {}
+    &-more {
+    }
 
     &_simple {}
     &_simple &-link {
@@ -1236,6 +1238,10 @@
         }
         &_modified {
             margin-bottom: 0;
+        }
+        &-more {
+            background-color: #2873B9;
+            color: #fff;
         }
     }
     @media screen

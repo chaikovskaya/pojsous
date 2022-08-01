@@ -105,7 +105,7 @@
     &-develop {
         margin-left: auto;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         font-weight: 500;
         font-size: 12px;
         line-height: 16px;
@@ -113,13 +113,13 @@
     }
     &-develop-link {
         margin-left: 9px;
+        margin-top: -6px;
     }
     &-develop-logo {
         width: 145px;
         height: 26px;
     }
     &-develop-label {
-        padding-bottom: 3px;
     }
     &-company {
         color: #fff;
@@ -160,9 +160,13 @@
         }
     }
     &-contacts-icon {
+        opacity: 0.8;
         width: 16px;
         height: 16px;
         margin-right: 7px;
+    }
+    &-contacts-block:hover &-contacts-icon {
+        opacity: 1;
     }
     &-contacts-icon_mail {
         margin-top: 4px;
@@ -260,7 +264,7 @@
             height: 18px;
         }
         &-develop-link {
-            margin-top: -2px;
+            margin-top: -1px;
         }
         &-socials .socials-item {
             margin-right: 15px;
@@ -377,9 +381,6 @@
         &-develop {
             margin-left: 0;
             text-align: center;
-        }
-        &-develop-label {
-            padding-bottom: 4px;
         }
     }
 }

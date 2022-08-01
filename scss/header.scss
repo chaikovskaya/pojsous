@@ -80,7 +80,7 @@
     }
     &_active &-input-wrapper {
         visibility: visible;
-        width: 370px;
+        width: 393px;
         right: 34px;
     }
     &_active &-input {
@@ -1379,7 +1379,7 @@ body.mob-menu-show {
     &-icon_whatsapp {}
     &-list_light {}
     &-list_light &-icon path {
-        fill: #fff;
+        fill: rgba(255, 255, 255, 0.8);
     }
     &-list_light &-link:hover &-icon_youtube path {
         fill: #E31E24;
@@ -1394,6 +1394,12 @@ body.mob-menu-show {
     and (max-width: $tablet){
         &-item {
             margin-right: 12px;
+        }
+    }
+    @media screen
+    and (max-width: $mobile){
+        &-list_light &-icon path {
+            fill: rgba(255, 255, 255, 1);
         }
     }
 }

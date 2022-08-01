@@ -747,8 +747,9 @@ blockquote {
 	visibility: hidden;
 	position: fixed;
 	z-index: 100;
-	bottom: 20px;
-	left: 10px;
+	bottom: 60px;
+	left: 50%;
+	margin-left: -640px;
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
@@ -1019,6 +1020,11 @@ blockquote {
 
 @media screen
 and (max-width: $desktop){
+	.button-up {
+		left: 30px;
+		bottom: 30px;
+		margin-left: 0;
+	}
 }
 
 @media screen
@@ -1092,6 +1098,6 @@ and (max-width: $mobile){
 		padding-left: 20px;
 	}
 	.button-up {
-		display: block;
+		left: 20px;
 	}
 }

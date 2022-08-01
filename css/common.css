@@ -648,8 +648,9 @@ blockquote {
   visibility: hidden;
   position: fixed;
   z-index: 100;
-  bottom: 20px;
-  left: 10px;
+  bottom: 60px;
+  left: 50%;
+  margin-left: -640px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -878,6 +879,12 @@ blockquote {
 .text-title {
   margin-top: 0 !important; }
 
+@media screen and (max-width: 1340px) {
+  .button-up {
+    left: 30px;
+    bottom: 30px;
+    margin-left: 0; } }
+
 @media screen and (max-width: 992px) {
   h1,
   .h1 {
@@ -931,7 +938,7 @@ blockquote {
     padding-right: 20px;
     padding-left: 20px; }
   .button-up {
-    display: block; } }
+    left: 20px; } }
 
 .field {
   position: relative;
@@ -1993,7 +2000,7 @@ label.form-error {
 
 .search_active .search-input-wrapper {
   visibility: visible;
-  width: 370px;
+  width: 393px;
   right: 34px; }
 
 .search_active .search-button {
@@ -3032,7 +3039,7 @@ body.mob-menu-show {
   line-height: 0; }
 
 .socials-list_light .socials-icon path {
-  fill: #fff; }
+  fill: rgba(255, 255, 255, 0.8); }
 
 .socials-list_light .socials-link:hover .socials-icon_youtube path {
   fill: #E31E24; }
@@ -3046,6 +3053,10 @@ body.mob-menu-show {
 @media screen and (max-width: 992px) {
   .socials-item {
     margin-right: 12px; } }
+
+@media screen and (max-width: 720px) {
+  .socials-list_light .socials-icon path {
+    fill: white; } }
 
 /* IE 11 */
 /* /IE 11 */
@@ -3130,18 +3141,17 @@ body.mob-menu-show {
   .footer-develop {
     margin-left: auto;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     color: #FFFFFF; }
   .footer-develop-link {
-    margin-left: 9px; }
+    margin-left: 9px;
+    margin-top: -6px; }
   .footer-develop-logo {
     width: 145px;
     height: 26px; }
-  .footer-develop-label {
-    padding-bottom: 3px; }
   .footer-company {
     color: #fff;
     font-weight: 300;
@@ -3169,9 +3179,12 @@ body.mob-menu-show {
     .footer-contacts-block a {
       text-decoration: none; }
   .footer-contacts-icon {
+    opacity: 0.8;
     width: 16px;
     height: 16px;
     margin-right: 7px; }
+  .footer-contacts-block:hover .footer-contacts-icon {
+    opacity: 1; }
   .footer-contacts-icon_mail {
     margin-top: 4px; }
   @media screen and (max-width: 1340px) {
@@ -3236,7 +3249,7 @@ body.mob-menu-show {
       width: 75px;
       height: 18px; }
     .footer-develop-link {
-      margin-top: -2px; }
+      margin-top: -1px; }
     .footer-socials .socials-item {
       margin-right: 15px; }
     .footer-socials .socials-icon {
@@ -3319,9 +3332,7 @@ body.mob-menu-show {
       margin-bottom: 11px; }
     .footer-develop {
       margin-left: 0;
-      text-align: center; }
-    .footer-develop-label {
-      padding-bottom: 4px; } }
+      text-align: center; } }
 
 .main-banner {
   margin-bottom: 120px; }
@@ -4258,7 +4269,10 @@ body.mob-menu-show {
         .projects-icon-element path {
           fill: #fff; }
       .projects_modified {
-        margin-bottom: 0; } }
+        margin-bottom: 0; }
+      .projects-more {
+        background-color: #2873B9;
+        color: #fff; } }
   @media screen and (max-width: 720px) {
     .projects-link {
       width: 245px; }
