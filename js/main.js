@@ -1339,7 +1339,7 @@ function initGalleryCard() {
             720: {
                 spaceBetween: 15,
             },
-        }
+        },
     });
 };
 

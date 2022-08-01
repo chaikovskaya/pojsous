@@ -32,6 +32,7 @@
     position: absolute;
     top: 0;
     left: 100%;
+    z-index: 1;
     margin-left: 10px;
     display: flex;
     align-items: center;
@@ -88,13 +89,13 @@
     width: 33px;
     height: 100%;
     background-color: transparent;
-    margin-left: -83px;
+    margin-left: -43px;
 }
 .fancybox-button--arrow_right {
     width: 33px;
     height: 100%;
     background-color: transparent;
-    margin-right: -83px;
+    margin-right: -43px;
 }
 
 .fancybox-button-icon {
@@ -196,8 +197,8 @@
 }
 
 .fancybox-show-thumbs .fancybox-slide {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 114px;
+    padding-right: 114px;
 }
 
 .fancybox-toolbar {
@@ -209,16 +210,19 @@
 
 @media screen
 and (max-width: $tablet) {
+}
+@media screen
+and (max-width: $mobile) {
     .fancybox-button--arrow_left {
         margin-left: 10px;
     }
     .fancybox-button--arrow_right {
         margin-right: 10px;
     }
-}
-@media screen
-and (max-width: $mobile) {
-
+    .fancybox-show-thumbs .fancybox-slide {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 /* /Fancybox */
 
@@ -442,6 +446,9 @@ and (max-width: $mobile){
         top: -44px;
         left: auto;
         right: 0;
+    }
+    .fancybox-show-thumbs .fancybox-close {
+        right: 10px;
     }
 }
 

@@ -172,6 +172,18 @@
         height: 100%;
         object-fit: cover;
     }
+    @media screen
+    and (max-width: $desktop){
+        &-title {
+            max-width: 810px;
+        }
+    }
+    @media screen
+    and (max-width: $notebook){
+        &-title {
+            max-width: 660px;
+        }
+    }
 }
 
 

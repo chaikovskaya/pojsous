@@ -38,6 +38,7 @@
         margin-left: 42.7%;
     }
     &-info-button {}
+    &-actions {}
 
     @media screen
     and (max-width: $desktop) {
@@ -121,6 +122,9 @@
             text-transform: uppercase;
             text-align: center;
             margin-left: 0;
+        }
+        &-actions {
+            text-align: center;
         }
     }
 }

@@ -222,6 +222,20 @@
     }
 
     @media screen
+    and (max-width: $desktop) {
+        &-title {
+            max-width: 830px;
+        }
+    }
+
+    @media screen
+    and (max-width: $notebook) {
+        &-title {
+            max-width: 660px;
+        }
+    }
+
+    @media screen
     and (max-width: $tablet){
         &-title {
             max-width: 450px;
@@ -239,8 +253,5 @@
     }
     @media screen
     and (max-width: $mobile){
-        &-links {
-            justify-content: left;
-        }
     }
 }

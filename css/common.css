@@ -1435,6 +1435,7 @@ label.form-error {
   position: absolute;
   top: 0;
   left: 100%;
+  z-index: 1;
   margin-left: 10px;
   display: flex;
   align-items: center;
@@ -1480,13 +1481,13 @@ label.form-error {
   width: 33px;
   height: 100%;
   background-color: transparent;
-  margin-left: -83px; }
+  margin-left: -43px; }
 
 .fancybox-button--arrow_right {
   width: 33px;
   height: 100%;
   background-color: transparent;
-  margin-right: -83px; }
+  margin-right: -43px; }
 
 .fancybox-button-icon {
   display: flex;
@@ -1568,8 +1569,8 @@ label.form-error {
   max-width: 100%; }
 
 .fancybox-show-thumbs .fancybox-slide {
-  padding-left: 0;
-  padding-right: 0; }
+  padding-left: 114px;
+  padding-right: 114px; }
 
 .fancybox-toolbar {
   display: none; }
@@ -1577,11 +1578,14 @@ label.form-error {
 .fancybox-infobar {
   display: none; }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 720px) {
   .fancybox-button--arrow_left {
     margin-left: 10px; }
   .fancybox-button--arrow_right {
-    margin-right: 10px; } }
+    margin-right: 10px; }
+  .fancybox-show-thumbs .fancybox-slide {
+    padding-left: 0;
+    padding-right: 0; } }
 
 /* /Fancybox */
 @keyframes preloader-animation {
@@ -1758,7 +1762,9 @@ label.form-error {
   .fancybox-close {
     top: -44px;
     left: auto;
-    right: 0; } }
+    right: 0; }
+  .fancybox-show-thumbs .fancybox-close {
+    right: 10px; } }
 
 .city-title {
   display: block;
@@ -2043,14 +2049,13 @@ label.form-error {
     right: 44px; } }
 
 @media screen and (max-width: 720px) {
+  .search-container {
+    position: static; }
   .search-input-wrapper {
-    right: 40px; }
+    top: -1px; }
   .search_active .search-input-wrapper {
-    width: 230px; } }
-
-@media screen and (max-width: 425px) {
-  .search_active .search-input-wrapper {
-    width: 140px; } }
+    right: 110px;
+    width: calc(100% - 133px); } }
 
 .header {
   margin-bottom: 45px; }
@@ -2171,7 +2176,7 @@ label.form-error {
     .header-logo {
       min-width: 80px;
       width: 80px;
-      margin-right: 20px; }
+      margin-right: 15px; }
     .header-buttons-name {
       height: 45px;
       font-size: 12px;
@@ -3415,7 +3420,7 @@ body.mob-menu-show {
     position: absolute;
     top: auto;
     bottom: auto;
-    left: 30px;
+    left: 0;
     z-index: 1;
     max-width: 500px;
     text-align: left; }
@@ -3499,6 +3504,20 @@ body.mob-menu-show {
     background-color: #fff;
     margin-right: 3px !important;
     margin-left: 3px !important; }
+  @media screen and (max-width: 1340px) {
+    .main-banner-slider-button {
+      min-width: 27px;
+      width: 27px;
+      height: 27px; }
+    .main-banner-slider-button_prev {
+      left: -28px;
+      margin-left: 0;
+      transform: none; }
+    .main-banner-slider-button_next {
+      left: auto;
+      right: -28px;
+      margin-left: 0;
+      transform: none; } }
   @media screen and (max-width: 992px) {
     .main-banner {
       margin-bottom: 50px; }
@@ -3529,12 +3548,13 @@ body.mob-menu-show {
         margin-left: 0;
         background-image: url("../images/main-banner/main-banner-decor-3-tablet.png"); }
       .main-banner-pagination {
-        bottom: 33px !important; } }
+        bottom: 33px !important; }
+      .main-banner:hover .main-banner-slider-button {
+        visibility: hidden; } }
   @media screen and (max-width: 720px) {
     .main-banner-container {
       height: 500px; }
     .main-banner-detail {
-      left: 20px;
       padding-right: 20px; }
     .main-banner-name {
       margin-bottom: 35px; }
@@ -5108,7 +5128,7 @@ body.mob-menu-show {
   margin-right: 9px; }
 
 .card-links-label:hover {
-  width: 210px; }
+  width: 220px; }
 
 .card-links-label:hover .card-links-icon {
   background-color: #202430; }
@@ -5191,6 +5211,14 @@ body.mob-menu-show {
 
 .card-props {
   margin-bottom: 120px; }
+
+@media screen and (max-width: 1340px) {
+  .card-title {
+    max-width: 810px; } }
+
+@media screen and (max-width: 1100px) {
+  .card-title {
+    max-width: 660px; } }
 
 @media screen and (min-width: 992px) {
   .card-gallery-button {
@@ -5294,8 +5322,6 @@ body.mob-menu-show {
     margin-bottom: 18px; }
   .card-gallery-main-list {
     margin-bottom: 18px; }
-  .card-actions {
-    text-align: left; }
   .card-table {
     min-width: 500px; } }
 
@@ -5437,6 +5463,14 @@ body.mob-menu-show {
   width: 100%;
   height: 100%;
   object-fit: cover; }
+
+@media screen and (max-width: 1340px) {
+  .projects-detail-title {
+    max-width: 810px; } }
+
+@media screen and (max-width: 1100px) {
+  .projects-detail-title {
+    max-width: 660px; } }
 
 .projects-similar-list {
   display: flex;
@@ -5756,6 +5790,14 @@ body.mob-menu-show {
   height: 100%;
   object-fit: cover; }
 
+@media screen and (max-width: 1340px) {
+  .news-detail-title {
+    max-width: 830px; } }
+
+@media screen and (max-width: 1100px) {
+  .news-detail-title {
+    max-width: 660px; } }
+
 @media screen and (max-width: 992px) {
   .news-detail-title {
     max-width: 450px; }
@@ -5766,10 +5808,6 @@ body.mob-menu-show {
   .news-detail-icon path {
     fill: #fff;
     stroke: transparent; } }
-
-@media screen and (max-width: 720px) {
-  .news-detail-links {
-    justify-content: left; } }
 
 .services-section-info {
   max-width: 1070px;
@@ -5880,11 +5918,15 @@ body.mob-menu-show {
     width: 100%;
     text-transform: uppercase;
     text-align: center;
-    margin-left: 0; } }
+    margin-left: 0; }
+  .services-detail-actions {
+    text-align: center; } }
 
 .search-result-list {
   margin-bottom: 73px;
-  max-width: 1060px; }
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .search-result-item {
   margin-bottom: 60px; }
@@ -5905,7 +5947,7 @@ body.mob-menu-show {
 .search-result-detail {
   display: block; }
 
-.search-result-more {
+.search-result-actions {
   display: none; }
 
 @media screen and (min-width: 992px) {
@@ -5919,8 +5961,6 @@ body.mob-menu-show {
     margin-bottom: 50px; }
   .search-result-item {
     margin-bottom: 35px; }
-  .search-result-more {
-    display: inline-block; }
   .search-result-detail {
     margin-bottom: 18px; }
   .search-result-name {
@@ -5928,11 +5968,15 @@ body.mob-menu-show {
     font-size: 14px;
     line-height: 19px; }
   .search-result-detail {
-    margin-bottom: 18px; } }
+    margin-bottom: 18px; }
+  .search-result-actions {
+    display: block; } }
 
 @media screen and (max-width: 720px) {
   .search-result-list {
-    margin-bottom: 85px; } }
+    margin-bottom: 85px; }
+  .search-result-actions {
+    text-align: center; } }
 
 .search-empty {
   max-width: 410px;

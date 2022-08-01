@@ -61,7 +61,7 @@
         margin-right: 9px;
     }
     &-links-label:hover {
-        width: 210px;
+        width: 220px;
     }
     &-links-label:hover &-links-icon {
         background-color: #202430;
@@ -165,10 +165,16 @@
 
     @media screen
     and (max-width: $desktop) {
+        &-title {
+            max-width: 810px;
+        }
     }
 
     @media screen
     and (max-width: $notebook) {
+        &-title {
+            max-width: 660px;
+        }
     }
 
     @media screen
@@ -314,9 +320,6 @@
         }
         &-gallery-main-list {
             margin-bottom: 18px;
-        }
-        &-actions {
-            text-align: left;
         }
         &-table {
             min-width: 500px;

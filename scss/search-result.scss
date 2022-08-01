@@ -3,6 +3,8 @@
     &-list {
         margin-bottom: 73px;
         max-width: 1060px;
+        margin-left: auto;
+        margin-right: auto;
     }
     &-item {
         margin-bottom: 60px;
@@ -24,8 +26,10 @@
     &-detail {
         display: block;
     }
-    &-more {
+    &-actions {
         display: none;
+    }
+    &-more {
     }
 
     @media screen
@@ -50,9 +54,6 @@
         &-item {
             margin-bottom: 35px;
         }
-        &-more {
-            display: inline-block;
-        }
         &-detail {
             margin-bottom: 18px;
         }
@@ -64,12 +65,18 @@
         &-detail {
             margin-bottom: 18px;
         }
+        &-actions {
+            display: block;
+        }
     }
 
     @media screen
     and (max-width: $mobile){
         &-list {
             margin-bottom: 85px;
+        }
+        &-actions {
+            text-align: center;
         }
     }
 }
