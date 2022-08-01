@@ -1,5 +1,9 @@
 
 .category {
+    &-title {
+        text-align: left;
+        text-transform: none;
+    }
     &-products {
         margin-bottom: 90px;
     }
@@ -35,6 +39,11 @@
 
     @media screen
     and (max-width: $tablet){
+        &-title {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 19px;
+        }
         &-products {
             margin-bottom: 50px;
         }
@@ -62,6 +71,9 @@
 
     @media screen
     and (max-width: $mobile){
+        &-title {
+            margin-bottom: 18px;
+        }
         &-products {
             margin-bottom: 120px;
         }

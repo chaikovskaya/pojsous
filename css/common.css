@@ -649,8 +649,8 @@ blockquote {
   position: fixed;
   z-index: 100;
   bottom: 60px;
-  left: 50%;
-  margin-left: -640px;
+  right: 50%;
+  margin-right: -715px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -881,9 +881,9 @@ blockquote {
 
 @media screen and (max-width: 1340px) {
   .button-up {
-    left: 30px;
-    bottom: 30px;
-    margin-left: 0; } }
+    right: 30px;
+    bottom: 40px;
+    margin-right: 0; } }
 
 @media screen and (max-width: 992px) {
   h1,
@@ -938,7 +938,8 @@ blockquote {
     padding-right: 20px;
     padding-left: 20px; }
   .button-up {
-    left: 20px; } }
+    right: 20px;
+    bottom: 30px; } }
 
 .field {
   position: relative;
@@ -4966,6 +4967,10 @@ body.mob-menu-show {
     .catalog-products-list-item {
       width: 206px; } }
 
+.category-title {
+  text-align: left;
+  text-transform: none; }
+
 .category-products {
   margin-bottom: 90px; }
 
@@ -4993,6 +4998,10 @@ body.mob-menu-show {
   margin-bottom: 120px; }
 
 @media screen and (max-width: 992px) {
+  .category-title {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 19px; }
   .category-products {
     margin-bottom: 50px; }
   .category-list {
@@ -5011,6 +5020,8 @@ body.mob-menu-show {
     padding-left: 15px; } }
 
 @media screen and (max-width: 720px) {
+  .category-title {
+    margin-bottom: 18px; }
   .category-products {
     margin-bottom: 120px; }
   .category-list {
@@ -6186,9 +6197,6 @@ body.mob-menu-show {
   background-size: auto;
   background-position: right 5px; }
 
-.company-advantages-item:nth-child(2) .company-advantages-img {
-  margin-left: 2px; }
-
 .company-advantages-item:nth-child(2) .company-advantages-name {
   max-width: 130px; }
 
@@ -6202,6 +6210,9 @@ body.mob-menu-show {
 .company-advantages-item:nth-child(4) .company-advantages-icon {
   background-image: url("../images/company/icon-bgr-4.png");
   background-position: -15px 25px; }
+
+.company-advantages-item:nth-child(4) .company-advantages-img {
+  margin-top: -2px; }
 
 .company-advantages-item:nth-child(5) .company-advantages-icon {
   background-image: url("../images/company/icon-bgr-5.png");
@@ -6217,6 +6228,10 @@ body.mob-menu-show {
   border-radius: 100%;
   background-color: #202430;
   box-shadow: 0px 4px 25px #FFFFFF; }
+
+.company-advantages-img {
+  max-width: 49px;
+  max-height: 47px; }
 
 .company-gallery {
   margin-bottom: 120px; }
@@ -6425,4 +6440,10 @@ body.mob-menu-show {
   .company-gallery-list {
     margin-bottom: 19px; }
   .company-gallery-content {
-    text-align: left; } }
+    text-align: left; }
+  .company-certificate {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow: hidden; } }

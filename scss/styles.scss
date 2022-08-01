@@ -748,8 +748,8 @@ blockquote {
 	position: fixed;
 	z-index: 100;
 	bottom: 60px;
-	left: 50%;
-	margin-left: -640px;
+	right: 50%;
+	margin-right: -715px;
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
@@ -1021,9 +1021,9 @@ blockquote {
 @media screen
 and (max-width: $desktop){
 	.button-up {
-		left: 30px;
-		bottom: 30px;
-		margin-left: 0;
+		right: 30px;
+		bottom: 40px;
+		margin-right: 0;
 	}
 }
 
@@ -1098,6 +1098,7 @@ and (max-width: $mobile){
 		padding-left: 20px;
 	}
 	.button-up {
-		left: 20px;
+		right: 20px;
+		bottom: 30px;
 	}
 }
