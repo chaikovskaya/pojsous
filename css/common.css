@@ -2877,6 +2877,8 @@ label.form-error {
   background-color: #fff;
   height: calc(100vh - 87px);
   width: 100%; }
+  .mob-search-result ~ .mob-nav {
+    display: none; }
 
 .mob-search-list {
   padding-bottom: 5px;
@@ -6005,8 +6007,7 @@ body.mob-menu-show {
     display: inline-block;
     width: 195px;
     height: 168px;
-    margin-bottom: 10px;
-    background: url("../images/search-result/search-result-img.png") no-repeat 0 0; }
+    margin-bottom: 10px; }
   @media screen and (max-width: 992px) {
     .search-empty-title {
       margin-bottom: 0;
@@ -6032,8 +6033,7 @@ body.mob-menu-show {
     display: inline-block;
     width: 205px;
     height: 151px;
-    margin-bottom: 10px;
-    background: url("../images/page-error/page-error-img.png") no-repeat 0 0; }
+    margin-bottom: 10px; }
   .page-error-info {
     margin-bottom: 45px;
     text-transform: uppercase;
@@ -6042,6 +6042,8 @@ body.mob-menu-show {
     line-height: 19px; }
   .page-error-title {
     margin-top: 67px; }
+  .page-error-title-label {
+    white-space: nowrap; }
   @media screen and (max-width: 992px) {
     .page-error-title {
       margin-top: 53px;

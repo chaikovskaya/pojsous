@@ -1161,6 +1161,9 @@
         background-color: #fff;
         height: calc(100vh - 87px);
         width: 100%;
+        & ~ .mob-nav {
+            display: none;
+        }
     }
     &-search-list {
         padding-bottom: 5px;

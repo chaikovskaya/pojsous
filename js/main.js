@@ -1335,9 +1335,15 @@ function initGalleryCard() {
         breakpoints: {
             0: {
                 spaceBetween: 20,
+                allowTouchMove: true,
             },
             720: {
                 spaceBetween: 15,
+                allowTouchMove: true,
+            },
+            992: {
+                spaceBetween: 15,
+                allowTouchMove: false,
             },
         },
     });

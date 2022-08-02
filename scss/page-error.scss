@@ -9,7 +9,6 @@
         width: 205px;
         height: 151px;
         margin-bottom: 10px;
-        background: url("../images/page-error/page-error-img.png") no-repeat 0 0;
     }
     &-info {
         margin-bottom: 45px;
@@ -20,6 +19,9 @@
     }
     &-title {
         margin-top: 67px;
+    }
+    &-title-label {
+        white-space: nowrap;
     }
 
     @media screen
