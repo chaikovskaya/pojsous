@@ -13,7 +13,6 @@
         margin-bottom: 30px;
     }
     &-list-item_callback {
-        display: none;
     }
     &-button {}
     &-callback {
@@ -120,9 +119,6 @@
     and (max-width: $tablet){
         &-list-item {
             margin-bottom: 50px;
-        }
-        &-list-item_callback {
-            display: block;
         }
         &-button {
             background-color: #2873B9;
